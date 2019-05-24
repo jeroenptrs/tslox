@@ -4,15 +4,14 @@
   "description": "Simple Node Sandbox",
   "main": "src/index.ts",
   "scripts": {
-    "start": "concurrently \"parcel --target node src/index.ts\" \"nodemon dist/index.js testFiles/test.lx\" "
+    "start": "concurrently \"tsc -w\" \"nodemon --watch dist --watch testFiles dist/index.js testFiles/test.lx\"",
+    "ast:generate": "node dist/helpers/generateAst.js src"
   },
   "dependencies": {},
   "devDependencies": {
     "@types/node": "12.0.2",
     "concurrently": "4.1.0",
     "nodemon": "1.18.4",
-    "parcel": "1.12.3",
-    "rimraf": "2.6.3",
     "typescript": "3.4.5"
   }
 }
