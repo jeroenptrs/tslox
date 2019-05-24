@@ -3,15 +3,12 @@
     {
       "views": [
         {
-          "id": "codesandbox.browser"
-        },
-        {
           "id": "codesandbox.terminal"
         }
       ]
     },
     {
-      "open": true,
+      "open": false,
       "views": [
         {
           "id": "codesandbox.console"

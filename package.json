@@ -4,7 +4,7 @@
   "description": "Simple Node Sandbox",
   "main": "src/index.ts",
   "scripts": {
-    "start": "concurrently \"parcel --target node src/index.ts\" \"nodemon dist/index.js test/test.lx\" "
+    "start": "concurrently \"parcel --target node src/index.ts\" \"nodemon dist/index.js testFiles/test.lx\" "
   },
   "dependencies": {},
   "devDependencies": {

@@ -25,5 +25,3 @@ function runFile(filePath: string) {
 }
 
 main(process.argv);
-
-console.log("test");
