@@ -1,10 +1,9 @@
 import fs from "fs";
 
-import { hadError } from "./error";
+import { hadError } from "./helpers/error";
 import { run } from "./run";
 
 function main(a: string[]) {
-  console.log("tslox");
   const [, , ...args] = a;
 
   if (args.length < 1) {

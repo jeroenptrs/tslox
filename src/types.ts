@@ -1,4 +1,11 @@
-export enum TokenType {
+export interface TokenType {
+  type: TokenEnum;
+  lexeme: string;
+  literal: any;
+  line: number;
+}
+
+export enum TokenEnum {
   // Single-character tokens.
   LEFT_PAREN = 0,
   RIGHT_PAREN,
