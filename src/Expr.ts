@@ -1,6 +1,16 @@
+// GENERATED FILE! DO NOT EDIT!
 import { Token } from "./Token";
 
-abstract class Expr {}
+export abstract class Expr {
+  abstract accept<R>(visitor: Visitor<R>): R;
+}
+
+export interface Visitor<R> {
+  visitBinaryExpr(binary: Binary): R;
+  visitGroupingExpr(grouping: Grouping): R;
+  visitLiteralExpr(literal: Literal): R;
+  visitUnaryExpr(unary: Unary): R;
+}
 
 export class Binary extends Expr {
   readonly left: Expr;
@@ -13,6 +23,10 @@ export class Binary extends Expr {
     this.operator = operator;
     this.right = right;
   }
+
+  public accept<R>(visitor: Visitor<R>): R {
+    return visitor.visitBinaryExpr(this);
+  }
 }
 
 export class Grouping extends Expr {
@@ -22,6 +36,10 @@ export class Grouping extends Expr {
     super();
     this.expression = expression;
   }
+
+  public accept<R>(visitor: Visitor<R>): R {
+    return visitor.visitGroupingExpr(this);
+  }
 }
 
 export class Literal extends Expr {
@@ -30,6 +48,10 @@ export class Literal extends Expr {
   constructor(value: any) {
     super();
     this.value = value;
+  }
+
+  public accept<R>(visitor: Visitor<R>): R {
+    return visitor.visitLiteralExpr(this);
   }
 }
 
@@ -41,5 +63,9 @@ export class Unary extends Expr {
     super();
     this.operator = operator;
     this.right = right;
+  }
+
+  public accept<R>(visitor: Visitor<R>): R {
+    return visitor.visitUnaryExpr(this);
   }
 }
