@@ -1,3 +1,6 @@
+import { RuntimeError } from "./RuntimeError";
+import { Token } from "./Token";
+
 export interface TokenType {
   type: TokenEnum;
   lexeme: string;
@@ -52,5 +55,8 @@ export enum TokenEnum {
   VAR,
   WHILE,
 
-  EOF
+  EOF,
 }
+
+export type LogRuntimeError = (e: RuntimeError) => void;
+export type LogError = (lineId: number | Token, message: string) => void;

@@ -1,18 +1,23 @@
 import * as Expr from "./Expr";
-import { TokenEnum } from "./types";
-import { Token } from "./Token";
 import { RuntimeError } from "./RuntimeError";
-import { runtimeError } from "./helpers/error";
 import * as Stmt from "./Stmt";
+import { Token } from "./Token";
+import { LogRuntimeError, TokenEnum } from "./types";
 
 export class Interpreter implements Expr.Visitor<any>, Stmt.Visitor<void> {
+  private errorLogger: LogRuntimeError;
+
+  constructor(errorLogger: LogRuntimeError) {
+    this.errorLogger = errorLogger;
+  }
+
   public interpret(statements: Stmt.Stmt[]): void {
     try {
       for (const statement of statements) {
         this.execute(statement);
       }
     } catch (e) {
-      runtimeError(e);
+      this.errorLogger(e);
     }
   }
 
@@ -87,13 +92,11 @@ export class Interpreter implements Expr.Visitor<any>, Stmt.Visitor<void> {
 
   public visitExpressionStmt(stmt: Stmt.Expression): void {
     this.evaluate(stmt.expr);
-    return null;
   }
 
   public visitPrintStmt(stmt: Stmt.Expression): void {
     const value = this.evaluate(stmt.expr);
     console.log(this.stringify(value));
-    return null;
   }
 
   private checkNumberOperand(operator: Token, operand: any): void {

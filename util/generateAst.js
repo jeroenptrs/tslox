@@ -1,6 +1,6 @@
-import { writeFileSync } from "fs";
+const { writeFileSync } = require("fs");
 
-function generateAst(commands: string[]) {
+function generateAst(commands) {
   const [, , out] = commands;
 
   if (!out) {
@@ -31,12 +31,7 @@ function generateAst(commands: string[]) {
   );
 }
 
-function defineAst(
-  outputDir: string,
-  baseName: string,
-  types: { [key: string]: string[] },
-  deps?: string[]
-) {
+function defineAst(outputDir, baseName, types, deps) {
   const path = `${outputDir}/${baseName}.ts`;
   const typeNames = Object.keys(types);
 
@@ -56,18 +51,18 @@ ${typeNames.map(type => defineType(baseName, type, types[type])).join("\n")}`;
   writeFileSync(path, data);
 }
 
-function defineImports(imports: string[]): string {
+function defineImports(imports) {
   return imports.map(i => `import { ${i} } from "./${i}";`).join("\n");
 }
 
-function defineVisitorInterface(baseName: string, types: string[]): string {
+function defineVisitorInterface(baseName, types) {
   return `export interface Visitor<R> {
 ${types.map(type => `  visit${type}${baseName}(${type.toLowerCase()}: ${type}): R;`).join("\n")}
 }`;
 }
 
-function defineType(baseName: string, type: string, fields: string[]): string {
-  function fieldName(field: string): string {
+function defineType(baseName, type, fields) {
+  function fieldName(field) {
     return field.substr(0, field.indexOf(":"));
   }
 

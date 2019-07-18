@@ -1,20 +1,21 @@
 import { Token } from "./Token";
-import { TokenEnum } from "./types";
-import { error } from "./helpers/error";
+import { TokenEnum, LogError } from "./types";
 import { isDigit } from "./helpers/Digit";
 import { isAlpha } from "./helpers/Alpha";
 import { isAlphaNumeric } from "./helpers/AlphaNumeric";
 import { Keywords } from "./helpers/Keywords";
 
 export class Scanner {
+  private errorLogger: LogError;
   private source: string;
   private tokens: Token[] = [];
   private start: number = 0;
   private current: number = 0;
   private line: number = 1;
 
-  constructor(source: string) {
+  constructor(source: string, errorLogger: LogError) {
     this.source = source;
+    this.errorLogger = errorLogger;
   }
 
   public scanTokens(): Token[] {
@@ -96,7 +97,7 @@ export class Scanner {
       default:
         if (isDigit(c)) this.number();
         else if (isAlpha(c)) this.identifier();
-        else error(this.line, "Unexpected character.");
+        else this.errorLogger(this.line, "Unexpected character.");
         break;
     }
   }
@@ -138,7 +139,7 @@ export class Scanner {
     }
 
     if (this.isAtEnd()) {
-      error(this.line, "Unterminated string.");
+      this.errorLogger(this.line, "Unterminated string.");
       return;
     }
 

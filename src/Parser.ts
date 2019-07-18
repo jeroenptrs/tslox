@@ -1,17 +1,18 @@
 import * as Expr from "./Expr";
-import { error } from "./helpers/error";
 import * as Stmt from "./Stmt";
 import { Token } from "./Token";
-import { TokenEnum } from "./types";
+import { TokenEnum, LogError } from "./types";
 
 class ParseError extends Error {}
 
 export class Parser {
+  private errorLogger: LogError;
   private readonly tokens: Token[];
   private current: number = 0;
 
-  constructor(tokens: Token[]) {
+  constructor(tokens: Token[], errorLogger: LogError) {
     this.tokens = tokens;
+    this.errorLogger = errorLogger;
   }
 
   public parse(): Stmt.Stmt[] {
@@ -120,7 +121,7 @@ export class Parser {
       return new Expr.Grouping(expr);
     }
 
-    throw error(this.peek(), "Expect expression.");
+    throw this.error(this.peek(), "Expect expression.");
   }
 
   private match(...types: TokenEnum[]): boolean {
@@ -140,31 +141,31 @@ export class Parser {
   };
 
   private error(token: Token, message: string) {
-    error(token, message);
+    this.errorLogger(token, message);
     return new ParseError();
   }
 
-  private synchronize(): void {
-    this.advance();
+  // private synchronize(): void {
+  //   this.advance();
 
-    while (!this.isAtEnd()) {
-      if (this.previous().type == TokenEnum.SEMICOLON) return;
+  //   while (!this.isAtEnd()) {
+  //     if (this.previous().type == TokenEnum.SEMICOLON) return;
 
-      switch (this.peek().type) {
-        case TokenEnum.CLASS:
-        case TokenEnum.FUN:
-        case TokenEnum.VAR:
-        case TokenEnum.FOR:
-        case TokenEnum.IF:
-        case TokenEnum.WHILE:
-        case TokenEnum.PRINT:
-        case TokenEnum.RETURN:
-          return;
-      }
+  //     switch (this.peek().type) {
+  //       case TokenEnum.CLASS:
+  //       case TokenEnum.FUN:
+  //       case TokenEnum.VAR:
+  //       case TokenEnum.FOR:
+  //       case TokenEnum.IF:
+  //       case TokenEnum.WHILE:
+  //       case TokenEnum.PRINT:
+  //       case TokenEnum.RETURN:
+  //         return;
+  //     }
 
-      this.advance();
-    }
-  }
+  //     this.advance();
+  //   }
+  // }
 
   private check = (type: TokenEnum) => (this.isAtEnd() ? false : this.peek().type === type);
 

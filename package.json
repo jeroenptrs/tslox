@@ -2,18 +2,35 @@
   "name": "tslox",
   "version": "1.0.0",
   "description": "typescript lox",
-  "main": "src/index.ts",
+  "main": "dist/index.js",
+  "module": "dist/tslox.esm.js",
+  "typings": "dist/index.d.ts",
   "scripts": {
-    "start:watch": "concurrently \"tsc -w\" \"nodemon --watch dist --watch testFiles dist/index.js testFiles/test.lx\"",
-    "start": "tsc && node dist/index.js testFiles/test.lx",
-    "ast:generate": "tsc && node dist/helpers/generateAst.js src"
+    "ast": "node util/generateAst.js src",
+    "build": "tsdx build",
+    "clean": "shx rm -rf dist",
+    "file": "node util/runFile.js",
+    "start": "tsdx watch",
+    "test": "tsdx test"
   },
   "dependencies": {},
   "devDependencies": {
     "@types/node": "^12.6.6",
+    "@types/jest": "^24.0.15",
+    "husky": "^3.0.1",
+    "prettier": "^1.18.2",
+    "pretty-quick": "^1.11.1",
+    "tsdx": "^0.7.2",
+    "tslib": "^1.10.0",
     "concurrently": "^4.1.1",
     "nodemon": "^1.19.1",
+    "shx": "^0.3.2",
     "typescript": "^3.5.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
   },
   "prettier": {
     "printWidth": 100,
