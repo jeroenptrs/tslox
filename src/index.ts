@@ -1,6 +1,6 @@
 import fs from "fs";
 
-import { hadError } from "./helpers/error";
+import { hadError, hadRuntimeError } from "./helpers/error";
 import { run } from "./run";
 
 function main(a: string[]) {
@@ -18,9 +18,7 @@ function runFile(filePath: string) {
   const source = fs.readFileSync(filePath, "utf8");
   run(source);
 
-  if (hadError()) {
-    process.exit(1);
-  }
+  if (hadError() || hadRuntimeError()) process.exit(1);
 }
 
 main(process.argv);

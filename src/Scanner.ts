@@ -95,7 +95,7 @@ export class Scanner {
 
       default:
         if (isDigit(c)) this.number();
-        if (isAlpha(c)) this.identifier();
+        else if (isAlpha(c)) this.identifier();
         else error(this.line, "Unexpected character.");
         break;
     }
@@ -111,20 +111,24 @@ export class Scanner {
   }
 
   private number(): void {
-    function advanceIfDigit() {
+    let decimal: boolean = false;
+
+    const advanceIfDigit = () => {
       while (isDigit(this.peek())) {
         this.advance();
       }
-    }
+    };
 
     advanceIfDigit();
 
     if (this.peek() === "." && isDigit(this.peekNext())) {
+      decimal = true;
       this.advance();
       advanceIfDigit();
     }
 
-    this.createAndAddToken(TokenEnum.NUMBER, parseFloat(this.source.substring(this.start, this.current)));
+    const number = this.source.substring(this.start, this.current);
+    this.createAndAddToken(TokenEnum.NUMBER, decimal ? parseFloat(number) : parseInt(number));
   }
 
   private string(): void {

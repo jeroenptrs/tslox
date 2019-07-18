@@ -1,0 +1,1389 @@
+{
+  "program": {
+    "fileInfos": {
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.es6.d.ts": {
+        "version": "c180f01a2aaac7d733001fa1db20f881dc83cf33096b674a1546ca26762e69da",
+        "signature": "c180f01a2aaac7d733001fa1db20f881dc83cf33096b674a1546ca26762e69da"
+      },
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.es5.d.ts": {
+        "version": "1f753cee573dea40df8a9dc873fef5566957b19ad513874f6643d8dfb14842d0",
+        "signature": "1f753cee573dea40df8a9dc873fef5566957b19ad513874f6643d8dfb14842d0"
+      },
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.es2015.d.ts": {
+        "version": "7994d44005046d1413ea31d046577cdda33b8b2470f30281fd9c8b3c99fe2d96",
+        "signature": "7994d44005046d1413ea31d046577cdda33b8b2470f30281fd9c8b3c99fe2d96"
+      },
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.es2016.d.ts": {
+        "version": "5f217838d25704474d9ef93774f04164889169ca31475fe423a9de6758f058d1",
+        "signature": "5f217838d25704474d9ef93774f04164889169ca31475fe423a9de6758f058d1"
+      },
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.es2017.d.ts": {
+        "version": "459097c7bdd88fc5731367e56591e4f465f2c9de81a35427a7bd473165c34743",
+        "signature": "459097c7bdd88fc5731367e56591e4f465f2c9de81a35427a7bd473165c34743"
+      },
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.es2018.d.ts": {
+        "version": "2edd3ddf436ef8e12df876dcae4ecd6a8748577944c477bf4b20d5596e0c9843",
+        "signature": "2edd3ddf436ef8e12df876dcae4ecd6a8748577944c477bf4b20d5596e0c9843"
+      },
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.dom.d.ts": {
+        "version": "973df4e41aea3780ce77073777d37dd5896f684124f4c42409f3a832133837a4",
+        "signature": "973df4e41aea3780ce77073777d37dd5896f684124f4c42409f3a832133837a4"
+      },
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.dom.iterable.d.ts": {
+        "version": "eb843da29336c7d5840bb439b24cf68a4a1652fd01c6e4e66ec74d8b136e944a",
+        "signature": "eb843da29336c7d5840bb439b24cf68a4a1652fd01c6e4e66ec74d8b136e944a"
+      },
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.webworker.importscripts.d.ts": {
+        "version": "fe4e59403e34c7ff747abe4ff6abbc7718229556d7c1a5b93473fb53156c913b",
+        "signature": "fe4e59403e34c7ff747abe4ff6abbc7718229556d7c1a5b93473fb53156c913b"
+      },
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.scripthost.d.ts": {
+        "version": "b9faa17292f17d2ad75e34fac77dd63a6403af1dba02d39cd0cbb9ffdf3de8b9",
+        "signature": "b9faa17292f17d2ad75e34fac77dd63a6403af1dba02d39cd0cbb9ffdf3de8b9"
+      },
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.es2015.core.d.ts": {
+        "version": "2a0390a665763bcc90f0670e43c587928d8fefe2a94a11209c1e22cba7b09f52",
+        "signature": "2a0390a665763bcc90f0670e43c587928d8fefe2a94a11209c1e22cba7b09f52"
+      },
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.es2015.collection.d.ts": {
+        "version": "dd94d8ef48c562389eb58af8df3a3a34d11367f7c818192aa5f16470d469e3f0",
+        "signature": "dd94d8ef48c562389eb58af8df3a3a34d11367f7c818192aa5f16470d469e3f0"
+      },
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.es2015.generator.d.ts": {
+        "version": "828413486bdcaa342558e8e4570b1b287b776cb61b4b70b0214bd10c5d9a94c3",
+        "signature": "828413486bdcaa342558e8e4570b1b287b776cb61b4b70b0214bd10c5d9a94c3"
+      },
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.es2015.iterable.d.ts": {
+        "version": "6c9f73334f8bf47aea685ca5b46a8f7e992a223e96fbceb030f26a4d2324ba21",
+        "signature": "6c9f73334f8bf47aea685ca5b46a8f7e992a223e96fbceb030f26a4d2324ba21"
+      },
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.es2015.promise.d.ts": {
+        "version": "e6b8ff2798f8ebd7a1c7afd8671f2cb67ee1901c422f5964d74b0b34c6574ea2",
+        "signature": "e6b8ff2798f8ebd7a1c7afd8671f2cb67ee1901c422f5964d74b0b34c6574ea2"
+      },
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.es2015.proxy.d.ts": {
+        "version": "5e72f949a89717db444e3bd9433468890068bb21a5638d8ab15a1359e05e54fe",
+        "signature": "5e72f949a89717db444e3bd9433468890068bb21a5638d8ab15a1359e05e54fe"
+      },
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.es2015.reflect.d.ts": {
+        "version": "f5b242136ae9bfb1cc99a5971cccc44e99947ae6b5ef6fd8aa54b5ade553b976",
+        "signature": "f5b242136ae9bfb1cc99a5971cccc44e99947ae6b5ef6fd8aa54b5ade553b976"
+      },
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.es2015.symbol.d.ts": {
+        "version": "9ae2860252d6b5f16e2026d8a2c2069db7b2a3295e98b6031d01337b96437230",
+        "signature": "9ae2860252d6b5f16e2026d8a2c2069db7b2a3295e98b6031d01337b96437230"
+      },
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.es2015.symbol.wellknown.d.ts": {
+        "version": "3e0a459888f32b42138d5a39f706ff2d55d500ab1031e0988b5568b0f67c2303",
+        "signature": "3e0a459888f32b42138d5a39f706ff2d55d500ab1031e0988b5568b0f67c2303"
+      },
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.es2016.array.include.d.ts": {
+        "version": "3f96f1e570aedbd97bf818c246727151e873125d0512e4ae904330286c721bc0",
+        "signature": "3f96f1e570aedbd97bf818c246727151e873125d0512e4ae904330286c721bc0"
+      },
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.es2017.object.d.ts": {
+        "version": "ff8ad203e83338289b0f5defc1a5b5c253fb7d251b464db497383f915a0df3f4",
+        "signature": "ff8ad203e83338289b0f5defc1a5b5c253fb7d251b464db497383f915a0df3f4"
+      },
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.es2017.sharedmemory.d.ts": {
+        "version": "b8667586a618c5cf64523d4e500ae39e781428abfb28f3de441fc66b56144b6f",
+        "signature": "b8667586a618c5cf64523d4e500ae39e781428abfb28f3de441fc66b56144b6f"
+      },
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.es2017.string.d.ts": {
+        "version": "21df2e0059f14dcb4c3a0e125859f6b6ff01332ee24b0065a741d121250bc71c",
+        "signature": "21df2e0059f14dcb4c3a0e125859f6b6ff01332ee24b0065a741d121250bc71c"
+      },
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.es2017.intl.d.ts": {
+        "version": "c1759cb171c7619af0d2234f2f8fb2a871ee88e956e2ed91bb61778e41f272c6",
+        "signature": "c1759cb171c7619af0d2234f2f8fb2a871ee88e956e2ed91bb61778e41f272c6"
+      },
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.es2017.typedarrays.d.ts": {
+        "version": "28569d59e07d4378cb3d54979c4c60f9f06305c9bb6999ffe6cab758957adc46",
+        "signature": "28569d59e07d4378cb3d54979c4c60f9f06305c9bb6999ffe6cab758957adc46"
+      },
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.es2018.asynciterable.d.ts": {
+        "version": "42102aaeb1bfec213be1e9777466a6d551eeba8567fed18c0cdbca8c35e3c6e4",
+        "signature": "42102aaeb1bfec213be1e9777466a6d551eeba8567fed18c0cdbca8c35e3c6e4"
+      },
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.es2018.intl.d.ts": {
+        "version": "1b820b57379c726f94af50cd60053674af53ff9d079c1563cc70071e8b757dd0",
+        "signature": "1b820b57379c726f94af50cd60053674af53ff9d079c1563cc70071e8b757dd0"
+      },
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.es2018.promise.d.ts": {
+        "version": "efe049114bad1035b0aa9a4a0359f50ab776e3897c411521e51d3013079cbd62",
+        "signature": "efe049114bad1035b0aa9a4a0359f50ab776e3897c411521e51d3013079cbd62"
+      },
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.es2018.regexp.d.ts": {
+        "version": "e7780d04cd4120ee554c665829db2bbdd6b947cbaa3c150b7d9ea74df3beb2e8",
+        "signature": "e7780d04cd4120ee554c665829db2bbdd6b947cbaa3c150b7d9ea74df3beb2e8"
+      },
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.esnext.intl.d.ts": {
+        "version": "f6e0c89daaf72eac38dfb1d5ef0972183f7f26a68da15bfe5bcb7cfccf0c7db8",
+        "signature": "f6e0c89daaf72eac38dfb1d5ef0972183f7f26a68da15bfe5bcb7cfccf0c7db8"
+      },
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.esnext.bigint.d.ts": {
+        "version": "63b66918290d794f73832a6d0325be5026236674fe8c0cb0b68d162000d7bbe8",
+        "signature": "63b66918290d794f73832a6d0325be5026236674fe8c0cb0b68d162000d7bbe8"
+      },
+      "/users/jeroen.peeters/documents/tslox/src/types.ts": {
+        "version": "38c6b66b4892837acc813076a12395530180db95bdb7817ebe2cad96766df9e6",
+        "signature": "28f55b4de995b5f9146ffed139c85bf46d617879ed81daa393fdba4c4efab992"
+      },
+      "/users/jeroen.peeters/documents/tslox/src/token.ts": {
+        "version": "1cd0517a8fe4819abdbb5a8bf367f3f6edc7e2cc978b8f2a4f78df23b3ea0067",
+        "signature": "43592a2c6bc79fbb0cf6fe1c66322d2ae839eb09dfcc05544ef340bee18c726b"
+      },
+      "/users/jeroen.peeters/documents/tslox/src/expr.ts": {
+        "version": "df94bccc745a9dd70e0f133c4b338396b8e5c5deed6be06c4c2ce45e9b18ff3a",
+        "signature": "4c8b58cbfcae99cf4e3aa9a031735e4f45a1058d82a98b3b7aa0b82454d50e7b"
+      },
+      "/users/jeroen.peeters/documents/tslox/src/astprinter.ts": {
+        "version": "402f5d184ff723c2a00f5e57ed983afb5f29529260908dc4bba6cf0bf61ec357",
+        "signature": "93e14cd225eb83e22ea429b45366b099fdb1d8e4b12c7f74cd8098d876e8a25f"
+      },
+      "/users/jeroen.peeters/documents/tslox/src/runtimeerror.ts": {
+        "version": "22d9c01e8e1598a72c40a6850f896ab644e7368375b0cf115f0943dcda8878d1",
+        "signature": "57e479c5123b1eb502da20fe51ef92b5bc48e17319ec9082392bcdb6e05dc1a0"
+      },
+      "/users/jeroen.peeters/documents/tslox/src/helpers/error.ts": {
+        "version": "596a2a5d28c516d40788a220c010cf831c6c6c3892910bd7a9094b0c07d9a536",
+        "signature": "a5455d330c2a9d967f658d754cc470e5b92580180302e67ccfccde2f547cbbf7"
+      },
+      "/users/jeroen.peeters/documents/tslox/src/interpreter.ts": {
+        "version": "0314f655b01150a3fc7a5ac4acf7b53786ac9a34406068f40b365f4f717c49a3",
+        "signature": "5bbe4f26cf53745be90684e5093d537b8d205b41b8db032192aa5f9b3d7b9ac5"
+      },
+      "/users/jeroen.peeters/documents/tslox/src/parser.ts": {
+        "version": "b13787de183c8cdc28b0018ebe3a924b58cc785e5e21371e0e7ab07def58b999",
+        "signature": "802636eb5511183ead2f7f5a61c90f08457ad2268005f2e6cd8c89fedab0ecd4"
+      },
+      "/users/jeroen.peeters/documents/tslox/src/helpers/digit.ts": {
+        "version": "e071de18772dc8e18aa58bd67cde1461360dfabc425e5400746ebc7b39ffddf9",
+        "signature": "1bb88d8c098cd82b638d30b79c3b7a8e62d5e3ede1b334db42fd14e5b8fb3497"
+      },
+      "/users/jeroen.peeters/documents/tslox/src/helpers/alpha.ts": {
+        "version": "5e7b65e4bb675b9e16981b7c31f49a4fc37e998bb88ad36654d5436ae02bb642",
+        "signature": "74bb0afe83e522b807d0597487909ba4c6a3414046ca09940cbb7ff4ac75736f"
+      },
+      "/users/jeroen.peeters/documents/tslox/src/helpers/alphanumeric.ts": {
+        "version": "fbbe62224eb261931aa7e1267997cb15a295f84cd6dd666d6f8f9aafab5dbc48",
+        "signature": "f179895fd3d7e9990184fa6e8457002ccb78ab12c05b62bb7211e31dcbdea457"
+      },
+      "/users/jeroen.peeters/documents/tslox/src/helpers/keywords.ts": {
+        "version": "bf94071660670124f53f0c9ef0ac9d9234d0b3e7aa9273922d00ccf9b9a1240f",
+        "signature": "76015af46cc3027d1e29633ef0bf7af70539626708fcb199461b4912e64a41db"
+      },
+      "/users/jeroen.peeters/documents/tslox/src/scanner.ts": {
+        "version": "80e317c621b554562bc24fc38b3ba416038ae765f6808dc933f2aa16e9545c98",
+        "signature": "5299847f31139ac1788facf4b3f3db3bdcaf23243023eba77cc5abb3cc8741a8"
+      },
+      "/users/jeroen.peeters/documents/tslox/src/run.ts": {
+        "version": "4b4a7ef203a643f9fc9d2aad5f6a58c8d264aca6d1bc23e82fbfc7ba5b129a9d",
+        "signature": "4c1d3a8fbe7b8c3c36d776480e7d88a915eb063a9326fc059d637989d119c1a0"
+      },
+      "/users/jeroen.peeters/documents/tslox/src/index.ts": {
+        "version": "382dbdbc4978819c52b675ea7f40875f2440676a86a44895e8f88fae084c3a74",
+        "signature": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881"
+      },
+      "/users/jeroen.peeters/documents/tslox/src/helpers/generateast.ts": {
+        "version": "540ecf3a4903ba8caaeeda57b497884c337e42188f408b06a69b97e75d18d84a",
+        "signature": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881"
+      },
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/globals.d.ts": {
+        "version": "41984c1a67108179630189847e04b2f82d62ccc6e7b3d8fc826bcf8e86770ed4",
+        "signature": "41984c1a67108179630189847e04b2f82d62ccc6e7b3d8fc826bcf8e86770ed4"
+      },
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/assert.d.ts": {
+        "version": "58a52f282f1dad18179023804c1f3a7536bf875748a0a314abd43f60fd5b244f",
+        "signature": "58a52f282f1dad18179023804c1f3a7536bf875748a0a314abd43f60fd5b244f"
+      },
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/async_hooks.d.ts": {
+        "version": "1305b079a057355f496bdde048716189178877a6b4fe0e9267a46af67f8c7561",
+        "signature": "1305b079a057355f496bdde048716189178877a6b4fe0e9267a46af67f8c7561"
+      },
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/buffer.d.ts": {
+        "version": "973a542cfa2567cac21a3fae8c629391d7c553a843c87f52cc589bbfb11fc25c",
+        "signature": "973a542cfa2567cac21a3fae8c629391d7c553a843c87f52cc589bbfb11fc25c"
+      },
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/child_process.d.ts": {
+        "version": "79ff2d695eb86f9862ac05a1833464bf6cb9500aaf3464013821a532f40cee64",
+        "signature": "79ff2d695eb86f9862ac05a1833464bf6cb9500aaf3464013821a532f40cee64"
+      },
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/cluster.d.ts": {
+        "version": "ce629710e5e58724902b753212e97861fd73e2aa09f5d88cb6d55dc763cf8c8a",
+        "signature": "ce629710e5e58724902b753212e97861fd73e2aa09f5d88cb6d55dc763cf8c8a"
+      },
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/console.d.ts": {
+        "version": "525c8fc510d9632d2a0a9de2d41c3ac1cdd79ff44d3b45c6d81cacabb683528d",
+        "signature": "525c8fc510d9632d2a0a9de2d41c3ac1cdd79ff44d3b45c6d81cacabb683528d"
+      },
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/constants.d.ts": {
+        "version": "8ce9418c78d3c1fb703ddbe38c936d34a989ba278666979826590dfa0772a424",
+        "signature": "8ce9418c78d3c1fb703ddbe38c936d34a989ba278666979826590dfa0772a424"
+      },
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/crypto.d.ts": {
+        "version": "f2253f03d67abbbd7e5977925e51d75fe4600d5fd52bea6b7ec9e07f2e6000cc",
+        "signature": "f2253f03d67abbbd7e5977925e51d75fe4600d5fd52bea6b7ec9e07f2e6000cc"
+      },
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/dgram.d.ts": {
+        "version": "b6c6861bccf209a98eeddb99bdb7bd987fb29fc52130d5d9fd2f79d3607a0a7a",
+        "signature": "b6c6861bccf209a98eeddb99bdb7bd987fb29fc52130d5d9fd2f79d3607a0a7a"
+      },
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/dns.d.ts": {
+        "version": "05e732266b5a36789fd9eb846b1f45fec1b6e318b740e3f20fc22fd95f9ebf31",
+        "signature": "05e732266b5a36789fd9eb846b1f45fec1b6e318b740e3f20fc22fd95f9ebf31"
+      },
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/domain.d.ts": {
+        "version": "d5b7c8819ce1bd31a45f7675309e145ec28e3aa1b60a8e0637fd0e8916255baa",
+        "signature": "d5b7c8819ce1bd31a45f7675309e145ec28e3aa1b60a8e0637fd0e8916255baa"
+      },
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/events.d.ts": {
+        "version": "0be551fde848d5adde38731272ee980bda2bde0f8bf2a76ce99e01b86985546c",
+        "signature": "0be551fde848d5adde38731272ee980bda2bde0f8bf2a76ce99e01b86985546c"
+      },
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/fs.d.ts": {
+        "version": "92bad5d23e0d21fb6ad4354b2ca8bfe683c1d57e32daca6a88c15fff2ecb9fcd",
+        "signature": "92bad5d23e0d21fb6ad4354b2ca8bfe683c1d57e32daca6a88c15fff2ecb9fcd"
+      },
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/http.d.ts": {
+        "version": "cc4cd9d8af7f5689b5df3c91d0fc287fafbd89e6e305183da28a6877a8aa08a8",
+        "signature": "cc4cd9d8af7f5689b5df3c91d0fc287fafbd89e6e305183da28a6877a8aa08a8"
+      },
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/http2.d.ts": {
+        "version": "ef535a3849d5826d70b2b341420e239e180d2d9d64045e84683b6a52a82845b5",
+        "signature": "ef535a3849d5826d70b2b341420e239e180d2d9d64045e84683b6a52a82845b5"
+      },
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/https.d.ts": {
+        "version": "dacbe08610729f6343ea9880ea8e737c6d7a6efa4a318d8f6acaf85db4aceed6",
+        "signature": "dacbe08610729f6343ea9880ea8e737c6d7a6efa4a318d8f6acaf85db4aceed6"
+      },
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/inspector.d.ts": {
+        "version": "8cfa78f4c052a93ac1e7accb0a78ce331dbd14f277ee0e193279ec31ce7efb25",
+        "signature": "8cfa78f4c052a93ac1e7accb0a78ce331dbd14f277ee0e193279ec31ce7efb25"
+      },
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/module.d.ts": {
+        "version": "03394bf8deb8781b490ae9266a843fbdf00647947d79e25fcbf1d89a9e9c8a66",
+        "signature": "03394bf8deb8781b490ae9266a843fbdf00647947d79e25fcbf1d89a9e9c8a66"
+      },
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/net.d.ts": {
+        "version": "cc5fac2b9e45a6670b96fd32cb42c97e0d4a7b2ee12c87963c6fe0f55fa84f50",
+        "signature": "cc5fac2b9e45a6670b96fd32cb42c97e0d4a7b2ee12c87963c6fe0f55fa84f50"
+      },
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/os.d.ts": {
+        "version": "1a6016bd905855b2b45881e9edbd7ab8c7175f8bcbb711ff06989c4bcdc75486",
+        "signature": "1a6016bd905855b2b45881e9edbd7ab8c7175f8bcbb711ff06989c4bcdc75486"
+      },
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/path.d.ts": {
+        "version": "5fb30076f0e0e5744db8993648bfb67aadd895f439edad5cce039127a87a8a36",
+        "signature": "5fb30076f0e0e5744db8993648bfb67aadd895f439edad5cce039127a87a8a36"
+      },
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/perf_hooks.d.ts": {
+        "version": "27ef4001526ee9d8afa57687a60bb3b59c52b32d29db0a2260094ab64726164f",
+        "signature": "27ef4001526ee9d8afa57687a60bb3b59c52b32d29db0a2260094ab64726164f"
+      },
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/process.d.ts": {
+        "version": "3a8848a9c307429b861402cc69bc472ffe0c05b86474fc158723169161e16389",
+        "signature": "3a8848a9c307429b861402cc69bc472ffe0c05b86474fc158723169161e16389"
+      },
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/punycode.d.ts": {
+        "version": "30ec6f9c683b988c3cfaa0c4690692049c4e7ed7dc6f6e94f56194c06b86f5e1",
+        "signature": "30ec6f9c683b988c3cfaa0c4690692049c4e7ed7dc6f6e94f56194c06b86f5e1"
+      },
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/querystring.d.ts": {
+        "version": "e0070c45bf15b872f58eee948f71ad6f4f424f36330b2477753fc1aed3ece36e",
+        "signature": "e0070c45bf15b872f58eee948f71ad6f4f424f36330b2477753fc1aed3ece36e"
+      },
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/readline.d.ts": {
+        "version": "94cf93922adcc9cb4acf11d8d71641af728de919a50ae55d8e83159afea1a42c",
+        "signature": "94cf93922adcc9cb4acf11d8d71641af728de919a50ae55d8e83159afea1a42c"
+      },
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/repl.d.ts": {
+        "version": "65dbe15ed8a8ed5d4707a63868178dc38111cfc06de28a2e50713ca017a9c157",
+        "signature": "65dbe15ed8a8ed5d4707a63868178dc38111cfc06de28a2e50713ca017a9c157"
+      },
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/stream.d.ts": {
+        "version": "2350c09d0121a0b22c386a7bb8436d521b444c6b4b3e6ee37197d08a23f3b9dd",
+        "signature": "2350c09d0121a0b22c386a7bb8436d521b444c6b4b3e6ee37197d08a23f3b9dd"
+      },
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/string_decoder.d.ts": {
+        "version": "17e157df6125098a1a34eb4d201ee4ac03bbe97e471ab5627bb2c40fce555948",
+        "signature": "17e157df6125098a1a34eb4d201ee4ac03bbe97e471ab5627bb2c40fce555948"
+      },
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/timers.d.ts": {
+        "version": "b40652bf8ce4a18133b31349086523b219724dca8df3448c1a0742528e7ad5b9",
+        "signature": "b40652bf8ce4a18133b31349086523b219724dca8df3448c1a0742528e7ad5b9"
+      },
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/tls.d.ts": {
+        "version": "5af0062b7d2fcda72a7fd60a7cfbe2a862ec53ffd39af66a02ba967193c4d162",
+        "signature": "5af0062b7d2fcda72a7fd60a7cfbe2a862ec53ffd39af66a02ba967193c4d162"
+      },
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/trace_events.d.ts": {
+        "version": "978aecd2e6bc2ac094e9a35eda98ff8586713857b3655e7c98ca5ed8f7d50662",
+        "signature": "978aecd2e6bc2ac094e9a35eda98ff8586713857b3655e7c98ca5ed8f7d50662"
+      },
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/tty.d.ts": {
+        "version": "0fd8dac24f12d9fd1fcc275200dd1b6771072f20331a07b18f7dbcbe20f7d3f4",
+        "signature": "0fd8dac24f12d9fd1fcc275200dd1b6771072f20331a07b18f7dbcbe20f7d3f4"
+      },
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/url.d.ts": {
+        "version": "1e3da92862604b1f7a32265169f9aa712c4567742d42597704e04ae3e07019e7",
+        "signature": "1e3da92862604b1f7a32265169f9aa712c4567742d42597704e04ae3e07019e7"
+      },
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts": {
+        "version": "0f6382d5032e45eec50b8f6c1e18c77544bc4db2ef8f854d196b254ec16add12",
+        "signature": "0f6382d5032e45eec50b8f6c1e18c77544bc4db2ef8f854d196b254ec16add12"
+      },
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/v8.d.ts": {
+        "version": "e98d697adf809fc14dc88ed4e00e4f0e0e381ca23d6d9320cf01af87e801f725",
+        "signature": "e98d697adf809fc14dc88ed4e00e4f0e0e381ca23d6d9320cf01af87e801f725"
+      },
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/vm.d.ts": {
+        "version": "ad20b1311e55187f8eeefdd282a02dbc70e5ac0cf8ab4cabae99c142b32cc562",
+        "signature": "ad20b1311e55187f8eeefdd282a02dbc70e5ac0cf8ab4cabae99c142b32cc562"
+      },
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/worker_threads.d.ts": {
+        "version": "7780573ed8387aaadcc61d87f3d60d77dabf1e060da252dc72ab1d73401988bb",
+        "signature": "7780573ed8387aaadcc61d87f3d60d77dabf1e060da252dc72ab1d73401988bb"
+      },
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/zlib.d.ts": {
+        "version": "f91189e04264b0e41ee96ff96661c3871e739b90156df2f2288da7a81019dcd9",
+        "signature": "f91189e04264b0e41ee96ff96661c3871e739b90156df2f2288da7a81019dcd9"
+      },
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/base.d.ts": {
+        "version": "6622f76993bdfeaacb947ba7c4cf26f2e5c5194194d02d792c3cba4174cd8fce",
+        "signature": "6622f76993bdfeaacb947ba7c4cf26f2e5c5194194d02d792c3cba4174cd8fce"
+      },
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts": {
+        "version": "4f54f0a9dd3b644c99ec32b32f8804d5978bc854799b228ae9c467bf3c84c64c",
+        "signature": "4f54f0a9dd3b644c99ec32b32f8804d5978bc854799b228ae9c467bf3c84c64c"
+      },
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/globals.d.ts": {
+        "version": "4926e99d2ad39c0bbd36f2d37cc8f52756bc7a5661ad7b12815df871a4b07ba1",
+        "signature": "4926e99d2ad39c0bbd36f2d37cc8f52756bc7a5661ad7b12815df871a4b07ba1"
+      },
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/index.d.ts": {
+        "version": "765fc34423b93c2ab763670d8d11d99e5f47387c13c161d6f1640dd6d91b7d1c",
+        "signature": "765fc34423b93c2ab763670d8d11d99e5f47387c13c161d6f1640dd6d91b7d1c"
+      }
+    },
+    "options": {
+      "tsBuildInfoFile": "/Users/jeroen.peeters/Documents/tslox/.buildcache/tslox",
+      "incremental": true,
+      "module": 1,
+      "esModuleInterop": true,
+      "target": 2,
+      "noImplicitAny": true,
+      "moduleResolution": 2,
+      "sourceMap": true,
+      "outDir": "/Users/jeroen.peeters/Documents/tslox/dist",
+      "baseUrl": "/Users/jeroen.peeters/Documents/tslox",
+      "configFilePath": "/Users/jeroen.peeters/Documents/tslox/tsconfig.json"
+    },
+    "referencedMap": {
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.es6.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.es5.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.es2015.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.es2016.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.es2017.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.es2018.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.dom.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.dom.iterable.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.webworker.importscripts.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.scripthost.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.es2015.core.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.es2015.collection.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.es2015.generator.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.es2015.iterable.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.es2015.promise.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.es2015.proxy.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.es2015.reflect.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.es2015.symbol.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.es2015.symbol.wellknown.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.es2016.array.include.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.es2017.object.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.es2017.sharedmemory.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.es2017.string.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.es2017.intl.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.es2017.typedarrays.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.es2018.asynciterable.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.es2018.intl.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.es2018.promise.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.es2018.regexp.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.esnext.intl.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.esnext.bigint.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/src/types.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/src/token.ts": [
+        "/users/jeroen.peeters/documents/tslox/src/types.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/src/expr.ts": [
+        "/users/jeroen.peeters/documents/tslox/src/token.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/src/astprinter.ts": [
+        "/users/jeroen.peeters/documents/tslox/src/expr.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/src/runtimeerror.ts": [
+        "/users/jeroen.peeters/documents/tslox/src/token.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/src/helpers/error.ts": [
+        "/users/jeroen.peeters/documents/tslox/src/token.ts",
+        "/users/jeroen.peeters/documents/tslox/src/types.ts",
+        "/users/jeroen.peeters/documents/tslox/src/runtimeerror.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/src/interpreter.ts": [
+        "/users/jeroen.peeters/documents/tslox/src/expr.ts",
+        "/users/jeroen.peeters/documents/tslox/src/types.ts",
+        "/users/jeroen.peeters/documents/tslox/src/token.ts",
+        "/users/jeroen.peeters/documents/tslox/src/runtimeerror.ts",
+        "/users/jeroen.peeters/documents/tslox/src/helpers/error.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/src/parser.ts": [
+        "/users/jeroen.peeters/documents/tslox/src/token.ts",
+        "/users/jeroen.peeters/documents/tslox/src/expr.ts",
+        "/users/jeroen.peeters/documents/tslox/src/types.ts",
+        "/users/jeroen.peeters/documents/tslox/src/helpers/error.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/src/helpers/digit.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/src/helpers/alpha.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/src/helpers/alphanumeric.ts": [
+        "/users/jeroen.peeters/documents/tslox/src/helpers/alpha.ts",
+        "/users/jeroen.peeters/documents/tslox/src/helpers/digit.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/src/helpers/keywords.ts": [
+        "/users/jeroen.peeters/documents/tslox/src/types.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/src/scanner.ts": [
+        "/users/jeroen.peeters/documents/tslox/src/token.ts",
+        "/users/jeroen.peeters/documents/tslox/src/types.ts",
+        "/users/jeroen.peeters/documents/tslox/src/helpers/error.ts",
+        "/users/jeroen.peeters/documents/tslox/src/helpers/digit.ts",
+        "/users/jeroen.peeters/documents/tslox/src/helpers/alpha.ts",
+        "/users/jeroen.peeters/documents/tslox/src/helpers/alphanumeric.ts",
+        "/users/jeroen.peeters/documents/tslox/src/helpers/keywords.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/src/run.ts": [
+        "/users/jeroen.peeters/documents/tslox/src/astprinter.ts",
+        "/users/jeroen.peeters/documents/tslox/src/helpers/error.ts",
+        "/users/jeroen.peeters/documents/tslox/src/parser.ts",
+        "/users/jeroen.peeters/documents/tslox/src/scanner.ts",
+        "/users/jeroen.peeters/documents/tslox/src/interpreter.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/src/index.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/fs.d.ts",
+        "/users/jeroen.peeters/documents/tslox/src/helpers/error.ts",
+        "/users/jeroen.peeters/documents/tslox/src/run.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/src/helpers/generateast.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/fs.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/globals.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/assert.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/async_hooks.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/buffer.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/child_process.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/events.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/net.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/stream.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/cluster.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/child_process.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/events.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/net.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/console.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/constants.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/crypto.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/stream.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/dgram.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/net.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/dns.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/events.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/dns.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/domain.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/events.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/events.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/fs.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/stream.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/events.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/url.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/http.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/events.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/stream.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/url.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/net.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/http2.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/events.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/fs.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/net.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/stream.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/tls.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/url.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/http.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/https.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/tls.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/events.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/http.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/url.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/inspector.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/events.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/module.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/net.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/stream.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/events.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/dns.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/os.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/path.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/perf_hooks.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/async_hooks.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/process.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/punycode.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/querystring.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/readline.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/events.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/stream.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/repl.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/readline.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/vm.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/stream.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/events.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/string_decoder.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/timers.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/tls.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/crypto.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/dns.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/net.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/stream.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/trace_events.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/tty.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/net.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/url.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/querystring.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/v8.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/stream.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/vm.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/worker_threads.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/vm.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/events.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/stream.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/zlib.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/stream.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/base.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/globals.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/assert.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/async_hooks.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/buffer.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/child_process.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/cluster.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/console.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/constants.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/crypto.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/dgram.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/dns.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/domain.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/events.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/fs.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/http.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/http2.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/https.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/inspector.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/module.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/net.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/os.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/path.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/perf_hooks.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/process.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/punycode.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/querystring.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/readline.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/repl.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/stream.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/string_decoder.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/timers.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/tls.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/trace_events.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/tty.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/url.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/v8.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/vm.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/worker_threads.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/zlib.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/globals.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/globals.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/index.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/base.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/globals.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts"
+      ]
+    },
+    "exportedModulesMap": {
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.es6.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.es5.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.es2015.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.es2016.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.es2017.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.es2018.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.dom.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.dom.iterable.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.webworker.importscripts.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.scripthost.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.es2015.core.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.es2015.collection.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.es2015.generator.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.es2015.iterable.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.es2015.promise.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.es2015.proxy.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.es2015.reflect.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.es2015.symbol.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.es2015.symbol.wellknown.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.es2016.array.include.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.es2017.object.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.es2017.sharedmemory.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.es2017.string.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.es2017.intl.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.es2017.typedarrays.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.es2018.asynciterable.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.es2018.intl.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.es2018.promise.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.es2018.regexp.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.esnext.intl.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.esnext.bigint.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/src/token.ts": [
+        "/users/jeroen.peeters/documents/tslox/src/types.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/src/expr.ts": [
+        "/users/jeroen.peeters/documents/tslox/src/token.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/src/astprinter.ts": [
+        "/users/jeroen.peeters/documents/tslox/src/expr.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/src/runtimeerror.ts": [
+        "/users/jeroen.peeters/documents/tslox/src/token.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/src/helpers/error.ts": [
+        "/users/jeroen.peeters/documents/tslox/src/token.ts",
+        "/users/jeroen.peeters/documents/tslox/src/runtimeerror.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/src/interpreter.ts": [
+        "/users/jeroen.peeters/documents/tslox/src/expr.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/src/parser.ts": [
+        "/users/jeroen.peeters/documents/tslox/src/token.ts",
+        "/users/jeroen.peeters/documents/tslox/src/expr.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/src/helpers/keywords.ts": [
+        "/users/jeroen.peeters/documents/tslox/src/types.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/src/scanner.ts": [
+        "/users/jeroen.peeters/documents/tslox/src/token.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/globals.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/assert.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/async_hooks.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/buffer.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/child_process.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/events.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/net.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/stream.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/cluster.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/child_process.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/events.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/net.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/console.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/constants.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/crypto.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/stream.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/dgram.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/net.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/dns.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/events.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/dns.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/domain.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/events.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/events.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/fs.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/stream.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/events.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/url.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/http.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/events.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/stream.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/url.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/net.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/http2.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/events.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/fs.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/net.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/stream.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/tls.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/url.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/http.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/https.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/tls.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/events.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/http.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/url.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/inspector.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/events.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/module.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/net.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/stream.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/events.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/dns.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/os.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/path.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/perf_hooks.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/async_hooks.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/process.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/punycode.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/querystring.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/readline.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/events.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/stream.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/repl.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/readline.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/vm.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/stream.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/events.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/string_decoder.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/timers.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/tls.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/crypto.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/dns.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/net.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/stream.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/trace_events.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/tty.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/net.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/url.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/querystring.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/v8.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/stream.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/vm.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/worker_threads.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/vm.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/events.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/stream.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/zlib.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/stream.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/base.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/globals.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/assert.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/async_hooks.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/buffer.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/child_process.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/cluster.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/console.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/constants.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/crypto.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/dgram.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/dns.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/domain.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/events.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/fs.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/http.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/http2.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/https.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/inspector.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/module.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/net.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/os.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/path.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/perf_hooks.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/process.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/punycode.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/querystring.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/readline.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/repl.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/stream.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/string_decoder.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/timers.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/tls.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/trace_events.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/tty.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/url.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/v8.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/vm.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/worker_threads.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/zlib.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/globals.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/globals.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/index.d.ts": [
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/base.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/globals.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts"
+      ]
+    },
+    "semanticDiagnosticsPerFile": [
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.es6.d.ts",
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.es5.d.ts",
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.es2015.d.ts",
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.es2016.d.ts",
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.es2017.d.ts",
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.es2018.d.ts",
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.dom.d.ts",
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.dom.iterable.d.ts",
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.webworker.importscripts.d.ts",
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.scripthost.d.ts",
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.es2015.core.d.ts",
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.es2015.collection.d.ts",
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.es2015.generator.d.ts",
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.es2015.iterable.d.ts",
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.es2015.promise.d.ts",
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.es2015.proxy.d.ts",
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.es2015.reflect.d.ts",
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.es2015.symbol.d.ts",
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.es2015.symbol.wellknown.d.ts",
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.es2016.array.include.d.ts",
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.es2017.object.d.ts",
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.es2017.sharedmemory.d.ts",
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.es2017.string.d.ts",
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.es2017.intl.d.ts",
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.es2017.typedarrays.d.ts",
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.es2018.asynciterable.d.ts",
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.es2018.intl.d.ts",
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.es2018.promise.d.ts",
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.es2018.regexp.d.ts",
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.esnext.intl.d.ts",
+      "/users/jeroen.peeters/documents/tslox/node_modules/typescript/lib/lib.esnext.bigint.d.ts",
+      "/users/jeroen.peeters/documents/tslox/src/types.ts",
+      "/users/jeroen.peeters/documents/tslox/src/token.ts",
+      "/users/jeroen.peeters/documents/tslox/src/expr.ts",
+      "/users/jeroen.peeters/documents/tslox/src/astprinter.ts",
+      "/users/jeroen.peeters/documents/tslox/src/runtimeerror.ts",
+      "/users/jeroen.peeters/documents/tslox/src/helpers/error.ts",
+      "/users/jeroen.peeters/documents/tslox/src/interpreter.ts",
+      "/users/jeroen.peeters/documents/tslox/src/parser.ts",
+      "/users/jeroen.peeters/documents/tslox/src/helpers/digit.ts",
+      "/users/jeroen.peeters/documents/tslox/src/helpers/alpha.ts",
+      "/users/jeroen.peeters/documents/tslox/src/helpers/alphanumeric.ts",
+      "/users/jeroen.peeters/documents/tslox/src/helpers/keywords.ts",
+      "/users/jeroen.peeters/documents/tslox/src/scanner.ts",
+      "/users/jeroen.peeters/documents/tslox/src/run.ts",
+      "/users/jeroen.peeters/documents/tslox/src/index.ts",
+      "/users/jeroen.peeters/documents/tslox/src/helpers/generateast.ts",
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/globals.d.ts",
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/assert.d.ts",
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/async_hooks.d.ts",
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/buffer.d.ts",
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/child_process.d.ts",
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/cluster.d.ts",
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/console.d.ts",
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/constants.d.ts",
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/crypto.d.ts",
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/dgram.d.ts",
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/dns.d.ts",
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/domain.d.ts",
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/events.d.ts",
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/fs.d.ts",
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/http.d.ts",
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/http2.d.ts",
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/https.d.ts",
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/inspector.d.ts",
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/module.d.ts",
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/net.d.ts",
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/os.d.ts",
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/path.d.ts",
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/perf_hooks.d.ts",
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/process.d.ts",
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/punycode.d.ts",
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/querystring.d.ts",
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/readline.d.ts",
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/repl.d.ts",
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/stream.d.ts",
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/string_decoder.d.ts",
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/timers.d.ts",
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/tls.d.ts",
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/trace_events.d.ts",
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/tty.d.ts",
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/url.d.ts",
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/v8.d.ts",
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/vm.d.ts",
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/worker_threads.d.ts",
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/zlib.d.ts",
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/base.d.ts",
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts",
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/globals.d.ts",
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/index.d.ts"
+    ]
+  },
+  "version": "3.5.3"
+}

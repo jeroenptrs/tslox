@@ -1,17 +1,23 @@
 {
-  "name": "node-sandbox",
+  "name": "tslox",
   "version": "1.0.0",
-  "description": "Simple Node Sandbox",
+  "description": "typescript lox",
   "main": "src/index.ts",
   "scripts": {
-    "start": "concurrently \"tsc -w\" \"nodemon --watch dist --watch testFiles dist/index.js testFiles/test.lx\"",
+    "start:watch": "concurrently \"tsc -w\" \"nodemon --watch dist --watch testFiles dist/index.js testFiles/test.lx\"",
+    "start": "tsc && node dist/index.js testFiles/test.lx",
     "ast:generate": "node dist/helpers/generateAst.js src"
   },
   "dependencies": {},
   "devDependencies": {
-    "@types/node": "12.0.2",
-    "concurrently": "4.1.0",
-    "nodemon": "1.18.4",
-    "typescript": "3.4.5"
+    "@types/node": "^12.6.6",
+    "concurrently": "^4.1.1",
+    "nodemon": "^1.19.1",
+    "typescript": "^3.5.3"
+  },
+  "prettier": {
+    "printWidth": 100,
+    "trailingComma": "es5",
+    "quoteProps": "consistent"
   }
 }
