@@ -12,13 +12,14 @@ type PartialConsole = {
 };
 
 export class Lox {
+  private stdout = (m: string) => this.logger.log(m);
   private logger: PartialConsole;
-  private interpreter: Interpreter = new Interpreter(this.runtimeError);
+  private interpreter: Interpreter = new Interpreter(this.stdout, this.runtimeError);
   private hadError = false;
   private hadRuntimeError = false;
 
-  constructor(logger?: PartialConsole) {
-    this.logger = typeof logger !== "undefined" ? logger : console;
+  constructor(logger: PartialConsole = console) {
+    this.logger = logger;
   }
 
   public run(source: string): boolean {

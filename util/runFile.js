@@ -14,7 +14,7 @@ function main(a) {
 }
 
 function runFile(filePath) {
-  const L = new Lox(console);
+  const L = new Lox();
   const source = fs.readFileSync(filePath, "utf8");
   process.exit(L.run(source) ? 0 : 1);
 }

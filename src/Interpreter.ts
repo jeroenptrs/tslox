@@ -5,10 +5,12 @@ import { Token } from "./Token";
 import { LogRuntimeError, TokenEnum } from "./types";
 
 export class Interpreter implements Expr.Visitor<any>, Stmt.Visitor<void> {
+  private stdout: (m: string) => void;
   private errorLogger: LogRuntimeError;
 
-  constructor(errorLogger: LogRuntimeError) {
+  constructor(stdout: (m: string) => void, errorLogger: LogRuntimeError) {
     this.errorLogger = errorLogger;
+    this.stdout = stdout;
   }
 
   public interpret(statements: Stmt.Stmt[]): void {
@@ -96,7 +98,7 @@ export class Interpreter implements Expr.Visitor<any>, Stmt.Visitor<void> {
 
   public visitPrintStmt(stmt: Stmt.Expression): void {
     const value = this.evaluate(stmt.expr);
-    console.log(this.stringify(value));
+    this.stdout(this.stringify(value));
   }
 
   private checkNumberOperand(operator: Token, operand: any): void {
