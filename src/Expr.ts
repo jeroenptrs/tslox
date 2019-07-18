@@ -5,6 +5,8 @@ export abstract class Expr {
   abstract accept<R>(visitor: Visitor<R>): R;
 }
 
+export default Expr;
+
 export interface Visitor<R> {
   visitBinaryExpr(binary: Binary): R;
   visitGroupingExpr(grouping: Grouping): R;

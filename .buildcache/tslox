@@ -134,8 +134,8 @@
         "signature": "43592a2c6bc79fbb0cf6fe1c66322d2ae839eb09dfcc05544ef340bee18c726b"
       },
       "/users/jeroen.peeters/documents/tslox/src/expr.ts": {
-        "version": "df94bccc745a9dd70e0f133c4b338396b8e5c5deed6be06c4c2ce45e9b18ff3a",
-        "signature": "4c8b58cbfcae99cf4e3aa9a031735e4f45a1058d82a98b3b7aa0b82454d50e7b"
+        "version": "84bebb2c99732ca299d0f35491f56bb0ce9a02fe51a3810f2555133bfadf5a3c",
+        "signature": "71335818800ab87ba3e14ef2b9a8658dc7554f16a37fdf71da7c068f36d92c4d"
       },
       "/users/jeroen.peeters/documents/tslox/src/astprinter.ts": {
         "version": "402f5d184ff723c2a00f5e57ed983afb5f29529260908dc4bba6cf0bf61ec357",
@@ -149,13 +149,17 @@
         "version": "596a2a5d28c516d40788a220c010cf831c6c6c3892910bd7a9094b0c07d9a536",
         "signature": "a5455d330c2a9d967f658d754cc470e5b92580180302e67ccfccde2f547cbbf7"
       },
+      "/users/jeroen.peeters/documents/tslox/src/stmt.ts": {
+        "version": "e7232819253af51013f49bfd3e04aff1c8babe8cf604280a0c63df72826dca47",
+        "signature": "e72e611ff1d00490463c10a4d7ae1eddb5bf301552824f09edf6761d145b2bb4"
+      },
       "/users/jeroen.peeters/documents/tslox/src/interpreter.ts": {
-        "version": "0314f655b01150a3fc7a5ac4acf7b53786ac9a34406068f40b365f4f717c49a3",
-        "signature": "5bbe4f26cf53745be90684e5093d537b8d205b41b8db032192aa5f9b3d7b9ac5"
+        "version": "4928e44924a8ff7ba9efd3c97a0d0e57128b0ebe36ec2184a9b809e623a6eace",
+        "signature": "3b084d32d537cec2c9c5260ddaa90e1cde86d3c37c9a776120b4e9e3d938d904"
       },
       "/users/jeroen.peeters/documents/tslox/src/parser.ts": {
-        "version": "b13787de183c8cdc28b0018ebe3a924b58cc785e5e21371e0e7ab07def58b999",
-        "signature": "802636eb5511183ead2f7f5a61c90f08457ad2268005f2e6cd8c89fedab0ecd4"
+        "version": "96bb6c053fb435055b869e242977d4263bc564d15cc7e9f2e72445cdb90f9b35",
+        "signature": "33d63f72b66df0cb5b894792588bcd9de986d141d4022d9e923d9b6aee51a9f8"
       },
       "/users/jeroen.peeters/documents/tslox/src/helpers/digit.ts": {
         "version": "e071de18772dc8e18aa58bd67cde1461360dfabc425e5400746ebc7b39ffddf9",
@@ -178,15 +182,15 @@
         "signature": "5299847f31139ac1788facf4b3f3db3bdcaf23243023eba77cc5abb3cc8741a8"
       },
       "/users/jeroen.peeters/documents/tslox/src/run.ts": {
-        "version": "4b4a7ef203a643f9fc9d2aad5f6a58c8d264aca6d1bc23e82fbfc7ba5b129a9d",
+        "version": "febf4d1a0208f8df63e9379de17ed28e08245b1f9d92be362a6e9b1c5e9c074c",
         "signature": "4c1d3a8fbe7b8c3c36d776480e7d88a915eb063a9326fc059d637989d119c1a0"
       },
       "/users/jeroen.peeters/documents/tslox/src/index.ts": {
-        "version": "382dbdbc4978819c52b675ea7f40875f2440676a86a44895e8f88fae084c3a74",
+        "version": "13bc4c9462f459b2208fc84672e2891e212ccf989bccfa5c33c6ed8ca6cc6821",
         "signature": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881"
       },
       "/users/jeroen.peeters/documents/tslox/src/helpers/generateast.ts": {
-        "version": "540ecf3a4903ba8caaeeda57b497884c337e42188f408b06a69b97e75d18d84a",
+        "version": "ee50e37a8a2a0916823ad5c57a2ef3902feca6874f1379f81ff850b6bffff156",
         "signature": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881"
       },
       "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/globals.d.ts": {
@@ -535,20 +539,27 @@
         "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
         "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
       ],
+      "/users/jeroen.peeters/documents/tslox/src/stmt.ts": [
+        "/users/jeroen.peeters/documents/tslox/src/expr.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
+        "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
       "/users/jeroen.peeters/documents/tslox/src/interpreter.ts": [
         "/users/jeroen.peeters/documents/tslox/src/expr.ts",
         "/users/jeroen.peeters/documents/tslox/src/types.ts",
         "/users/jeroen.peeters/documents/tslox/src/token.ts",
         "/users/jeroen.peeters/documents/tslox/src/runtimeerror.ts",
         "/users/jeroen.peeters/documents/tslox/src/helpers/error.ts",
+        "/users/jeroen.peeters/documents/tslox/src/stmt.ts",
         "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
         "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
       ],
       "/users/jeroen.peeters/documents/tslox/src/parser.ts": [
-        "/users/jeroen.peeters/documents/tslox/src/token.ts",
         "/users/jeroen.peeters/documents/tslox/src/expr.ts",
-        "/users/jeroen.peeters/documents/tslox/src/types.ts",
         "/users/jeroen.peeters/documents/tslox/src/helpers/error.ts",
+        "/users/jeroen.peeters/documents/tslox/src/stmt.ts",
+        "/users/jeroen.peeters/documents/tslox/src/token.ts",
+        "/users/jeroen.peeters/documents/tslox/src/types.ts",
         "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/util.d.ts",
         "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
       ],
@@ -583,7 +594,6 @@
         "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts"
       ],
       "/users/jeroen.peeters/documents/tslox/src/run.ts": [
-        "/users/jeroen.peeters/documents/tslox/src/astprinter.ts",
         "/users/jeroen.peeters/documents/tslox/src/helpers/error.ts",
         "/users/jeroen.peeters/documents/tslox/src/parser.ts",
         "/users/jeroen.peeters/documents/tslox/src/scanner.ts",
@@ -1011,12 +1021,16 @@
         "/users/jeroen.peeters/documents/tslox/src/token.ts",
         "/users/jeroen.peeters/documents/tslox/src/runtimeerror.ts"
       ],
+      "/users/jeroen.peeters/documents/tslox/src/stmt.ts": [
+        "/users/jeroen.peeters/documents/tslox/src/expr.ts"
+      ],
       "/users/jeroen.peeters/documents/tslox/src/interpreter.ts": [
+        "/users/jeroen.peeters/documents/tslox/src/stmt.ts",
         "/users/jeroen.peeters/documents/tslox/src/expr.ts"
       ],
       "/users/jeroen.peeters/documents/tslox/src/parser.ts": [
         "/users/jeroen.peeters/documents/tslox/src/token.ts",
-        "/users/jeroen.peeters/documents/tslox/src/expr.ts"
+        "/users/jeroen.peeters/documents/tslox/src/stmt.ts"
       ],
       "/users/jeroen.peeters/documents/tslox/src/helpers/keywords.ts": [
         "/users/jeroen.peeters/documents/tslox/src/types.ts"
@@ -1329,6 +1343,7 @@
       "/users/jeroen.peeters/documents/tslox/src/astprinter.ts",
       "/users/jeroen.peeters/documents/tslox/src/runtimeerror.ts",
       "/users/jeroen.peeters/documents/tslox/src/helpers/error.ts",
+      "/users/jeroen.peeters/documents/tslox/src/stmt.ts",
       "/users/jeroen.peeters/documents/tslox/src/interpreter.ts",
       "/users/jeroen.peeters/documents/tslox/src/parser.ts",
       "/users/jeroen.peeters/documents/tslox/src/helpers/digit.ts",
@@ -1338,7 +1353,6 @@
       "/users/jeroen.peeters/documents/tslox/src/scanner.ts",
       "/users/jeroen.peeters/documents/tslox/src/run.ts",
       "/users/jeroen.peeters/documents/tslox/src/index.ts",
-      "/users/jeroen.peeters/documents/tslox/src/helpers/generateast.ts",
       "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/globals.d.ts",
       "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/assert.d.ts",
       "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/async_hooks.d.ts",
@@ -1382,7 +1396,8 @@
       "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/base.d.ts",
       "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/util.d.ts",
       "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/globals.d.ts",
-      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/index.d.ts"
+      "/users/jeroen.peeters/documents/tslox/node_modules/@types/node/ts3.2/index.d.ts",
+      "/users/jeroen.peeters/documents/tslox/src/helpers/generateast.ts"
     ]
   },
   "version": "3.5.3"

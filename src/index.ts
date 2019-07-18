@@ -19,6 +19,7 @@ function runFile(filePath: string) {
   run(source);
 
   if (hadError() || hadRuntimeError()) process.exit(1);
+  process.exit(0);
 }
 
 main(process.argv);

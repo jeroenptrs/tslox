@@ -6,7 +6,7 @@
   "scripts": {
     "start:watch": "concurrently \"tsc -w\" \"nodemon --watch dist --watch testFiles dist/index.js testFiles/test.lx\"",
     "start": "tsc && node dist/index.js testFiles/test.lx",
-    "ast:generate": "node dist/helpers/generateAst.js src"
+    "ast:generate": "tsc && node dist/helpers/generateAst.js src"
   },
   "dependencies": {},
   "devDependencies": {

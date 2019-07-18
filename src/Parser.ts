@@ -1,7 +1,8 @@
-import { Token } from "./Token";
 import * as Expr from "./Expr";
-import { TokenEnum, TokenType } from "./types";
 import { error } from "./helpers/error";
+import * as Stmt from "./Stmt";
+import { Token } from "./Token";
+import { TokenEnum } from "./types";
 
 class ParseError extends Error {}
 
@@ -13,16 +14,35 @@ export class Parser {
     this.tokens = tokens;
   }
 
-  public parse(): Expr.Expr {
-    try {
-      return this.expression();
-    } catch (error) {
-      return null;
+  public parse(): Stmt.Stmt[] {
+    const statements = new Array<Stmt.Stmt>();
+
+    while (!this.isAtEnd()) {
+      statements.push(this.statement());
     }
+
+    return statements;
   }
 
   private expression(): Expr.Expr {
     return this.equality();
+  }
+
+  private statement(): Stmt.Stmt {
+    if (this.match(TokenEnum.PRINT)) return this.printStatement();
+    return this.expressionStatement();
+  }
+
+  private printStatement(): Stmt.Stmt {
+    const value = this.expression();
+    this.consume(TokenEnum.SEMICOLON, "Expect ';' after value.");
+    return new Stmt.Print(value);
+  }
+
+  private expressionStatement(): Stmt.Stmt {
+    const expr = this.expression();
+    this.consume(TokenEnum.SEMICOLON, "Expect ';' after value.");
+    return new Stmt.Expression(expr);
   }
 
   private equality(): Expr.Expr {
