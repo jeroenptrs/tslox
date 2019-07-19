@@ -12,8 +12,14 @@ type PartialConsole = {
 };
 
 export class Lox {
-  private stdout = (m: string) => this.logger.log(m);
   private logger: PartialConsole;
+
+  private stdout = (m: string) => this.logger.log(m);
+  private runtimeError = (error: RuntimeError) => {
+    this.logger.error(`${error.message}\n[line ${error.token.line}]`);
+    this.hadRuntimeError = true;
+  };
+
   private interpreter: Interpreter = new Interpreter(this.stdout, this.runtimeError);
   private hadError = false;
   private hadRuntimeError = false;
@@ -37,20 +43,16 @@ export class Lox {
     }
   }
 
-  private error(lineId: number | Token, message: string): void {
+  private error = (lineId: number | Token, message: string) => {
     if (typeof lineId === "number") this.report(lineId, "", message);
-    else if (lineId.type)
+    else if (Object.keys(lineId).includes("type")) {
       this.report(
         lineId.line,
         lineId.type === TokenEnum.EOF ? " at end" : `at '${lineId.lexeme}'`,
         message
       );
-  }
-
-  private runtimeError(error: RuntimeError): void {
-    this.logger.error(`${error.message}\n[line ${error.token.line}]`);
-    this.hadRuntimeError = true;
-  }
+    }
+  };
 
   private report(line: number, where: string, message: string) {
     this.logger.error(`[line: ${line}]: Error ${where}: ${message}`);

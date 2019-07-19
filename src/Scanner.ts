@@ -106,9 +106,9 @@ export class Scanner {
     while (isAlphaNumeric(this.peek())) this.advance();
 
     const text = this.source.substring(this.start, this.current);
-    const type = Keywords[text];
+    const type = Keywords[text] || TokenEnum.IDENTIFIER;
 
-    this.addToken(type === null ? TokenEnum.IDENTIFIER : type);
+    this.addToken(type);
   }
 
   private number(): void {

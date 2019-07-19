@@ -1,1 +1,3 @@
-print 1 + 3 + 2 + 3;
+var a = "b";
+var b = "a";
+print b + a;

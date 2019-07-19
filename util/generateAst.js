@@ -12,10 +12,12 @@ function generateAst(commands) {
     out,
     "Expr",
     {
+      Assign: ["name: Token", "value: Expr"],
       Binary: ["left: Expr", "operator: Token", "right: Expr"],
       Grouping: ["expression: Expr"],
       Literal: ["value: any"],
       Unary: ["operator: Token", "right: Expr"],
+      Variable: ["name: Token"],
     },
     ["Token"]
   );
@@ -26,8 +28,9 @@ function generateAst(commands) {
     {
       Expression: ["expr: Expr"],
       Print: ["expr: Expr"],
+      Vrbl: ["name: Token", "initializer: Expr | null"],
     },
-    ["Expr"]
+    ["Expr", "Token"]
   );
 }
 

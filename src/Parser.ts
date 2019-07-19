@@ -1,7 +1,7 @@
 import * as Expr from "./Expr";
 import * as Stmt from "./Stmt";
 import { Token } from "./Token";
-import { TokenEnum, LogError } from "./types";
+import { LogError, TokenEnum } from "./types";
 
 class ParseError extends Error {}
 
@@ -19,14 +19,25 @@ export class Parser {
     const statements = new Array<Stmt.Stmt>();
 
     while (!this.isAtEnd()) {
-      statements.push(this.statement());
+      const d = this.declaration();
+      if (d !== null) statements.push(d);
     }
 
     return statements;
   }
 
   private expression(): Expr.Expr {
-    return this.equality();
+    return this.assignment();
+  }
+
+  private declaration(): Stmt.Stmt | null {
+    try {
+      if (this.match(TokenEnum.VAR)) return this.varDeclaration();
+      return this.statement();
+    } catch (error) {
+      this.synchronize();
+      return null;
+    }
   }
 
   private statement(): Stmt.Stmt {
@@ -40,10 +51,40 @@ export class Parser {
     return new Stmt.Print(value);
   }
 
+  private varDeclaration() {
+    const name: Token = this.consume(TokenEnum.IDENTIFIER, "Expect variable name");
+    let initializer: Expr.Expr | null = null;
+
+    if (this.match(TokenEnum.EQUAL)) {
+      initializer = this.expression();
+    }
+
+    this.consume(TokenEnum.SEMICOLON, "Expect ';' after variable declaration.");
+    return new Stmt.Vrbl(name, initializer);
+  }
+
   private expressionStatement(): Stmt.Stmt {
     const expr = this.expression();
     this.consume(TokenEnum.SEMICOLON, "Expect ';' after value.");
     return new Stmt.Expression(expr);
+  }
+
+  private assignment(): Expr.Expr {
+    const expr = this.equality();
+
+    if (this.match(TokenEnum.EQUAL)) {
+      const equals = this.previous();
+      const value = this.assignment();
+
+      if (expr instanceof Expr.Variable) {
+        const name = expr.name;
+        return new Expr.Assign(name, value);
+      }
+
+      this.error(equals, "Invalid assignment target");
+    }
+
+    return expr;
   }
 
   private equality(): Expr.Expr {
@@ -115,6 +156,10 @@ export class Parser {
       return new Expr.Literal(this.previous().literal);
     }
 
+    if (this.match(TokenEnum.IDENTIFIER)) {
+      return new Expr.Variable(this.previous());
+    }
+
     if (this.match(TokenEnum.LEFT_PAREN)) {
       const expr: Expr.Expr = this.expression();
       this.consume(TokenEnum.RIGHT_PAREN, "Expect ')' after expression.");
@@ -145,27 +190,27 @@ export class Parser {
     return new ParseError();
   }
 
-  // private synchronize(): void {
-  //   this.advance();
+  private synchronize(): void {
+    this.advance();
 
-  //   while (!this.isAtEnd()) {
-  //     if (this.previous().type == TokenEnum.SEMICOLON) return;
+    while (!this.isAtEnd()) {
+      if (this.previous().type === TokenEnum.SEMICOLON) return;
 
-  //     switch (this.peek().type) {
-  //       case TokenEnum.CLASS:
-  //       case TokenEnum.FUN:
-  //       case TokenEnum.VAR:
-  //       case TokenEnum.FOR:
-  //       case TokenEnum.IF:
-  //       case TokenEnum.WHILE:
-  //       case TokenEnum.PRINT:
-  //       case TokenEnum.RETURN:
-  //         return;
-  //     }
+      switch (this.peek().type) {
+        case TokenEnum.CLASS:
+        case TokenEnum.FUN:
+        case TokenEnum.VAR:
+        case TokenEnum.FOR:
+        case TokenEnum.IF:
+        case TokenEnum.WHILE:
+        case TokenEnum.PRINT:
+        case TokenEnum.RETURN:
+          return;
+      }
 
-  //     this.advance();
-  //   }
-  // }
+      this.advance();
+    }
+  }
 
   private check = (type: TokenEnum) => (this.isAtEnd() ? false : this.peek().type === type);
 
