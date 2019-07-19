@@ -129,11 +129,28 @@ export class Interpreter implements Expr.Visitor<any>, Stmt.Visitor<void> {
     this.environment.define(stmt.name.lexeme, value);
   }
 
+  public visitBlockStmt(stmt: Stmt.Block): void {
+    this.executeBlock(stmt.statements, new Environment(this.environment));
+  }
+
   private evaluate(expr: Expr.Expr): any {
     return expr.accept(this);
   }
 
   private execute(stmt: Stmt.Stmt) {
     stmt.accept(this);
+  }
+
+  private executeBlock(statements: Stmt.Stmt[], environment: Environment): void {
+    const previous = this.environment;
+    try {
+      this.environment = environment;
+
+      for (const statement of statements) {
+        this.execute(statement);
+      }
+    } finally {
+      this.environment = previous;
+    }
   }
 }

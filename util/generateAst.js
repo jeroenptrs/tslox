@@ -26,6 +26,7 @@ function generateAst(commands) {
     out,
     "Stmt",
     {
+      Block: ["statements: Stmt[]"],
       Expression: ["expr: Expr"],
       Print: ["expr: Expr"],
       Vrbl: ["name: Token", "initializer: Expr | null"],

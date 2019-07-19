@@ -9,9 +9,23 @@ export abstract class Stmt {
 export default Stmt;
 
 export interface Visitor<R> {
+  visitBlockStmt(block: Block): R;
   visitExpressionStmt(expression: Expression): R;
   visitPrintStmt(print: Print): R;
   visitVrblStmt(vrbl: Vrbl): R;
+}
+
+export class Block extends Stmt {
+  readonly statements: Stmt[];
+
+  constructor(statements: Stmt[]) {
+    super();
+    this.statements = statements;
+  }
+
+  public accept<R>(visitor: Visitor<R>): R {
+    return visitor.visitBlockStmt(this);
+  }
 }
 
 export class Expression extends Stmt {

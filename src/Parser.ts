@@ -42,6 +42,7 @@ export class Parser {
 
   private statement(): Stmt.Stmt {
     if (this.match(TokenEnum.PRINT)) return this.printStatement();
+    if (this.match(TokenEnum.LEFT_BRACE)) return new Stmt.Block(this.block());
     return this.expressionStatement();
   }
 
@@ -67,6 +68,18 @@ export class Parser {
     const expr = this.expression();
     this.consume(TokenEnum.SEMICOLON, "Expect ';' after value.");
     return new Stmt.Expression(expr);
+  }
+
+  private block(): Stmt.Stmt[] {
+    const statements = new Array<Stmt.Stmt>();
+
+    while (!this.check(TokenEnum.RIGHT_BRACE) && !this.isAtEnd()) {
+      const d = this.declaration();
+      if (d !== null) statements.push(d);
+    }
+
+    this.consume(TokenEnum.RIGHT_BRACE, "Expect } after block");
+    return statements;
   }
 
   private assignment(): Expr.Expr {
