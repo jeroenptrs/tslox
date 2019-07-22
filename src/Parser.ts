@@ -41,9 +41,57 @@ export class Parser {
   }
 
   private statement(): Stmt.Stmt {
+    if (this.match(TokenEnum.FOR)) return this.forStatement();
+    if (this.match(TokenEnum.IF)) return this.ifElseStatement();
     if (this.match(TokenEnum.PRINT)) return this.printStatement();
+    if (this.match(TokenEnum.WHILE)) return this.whileStatement();
     if (this.match(TokenEnum.LEFT_BRACE)) return new Stmt.Block(this.block());
     return this.expressionStatement();
+  }
+
+  private forStatement(): Stmt.Stmt {
+    this.consume(TokenEnum.LEFT_PAREN, "Expect '(' after 'for'.");
+
+    let initializer: Stmt.Stmt | null;
+    if (this.match(TokenEnum.SEMICOLON)) {
+      initializer = null;
+    } else if (this.match(TokenEnum.VAR)) {
+      initializer = this.varDeclaration();
+    } else {
+      initializer = this.expressionStatement();
+    }
+
+    let condition: Expr.Expr | null = !this.check(TokenEnum.SEMICOLON) ? this.expression() : null;
+    this.consume(TokenEnum.SEMICOLON, "Expect ';' after loop condition.");
+
+    const increment: Expr.Expr | null = !this.check(TokenEnum.RIGHT_PAREN)
+      ? this.expression()
+      : null;
+    this.consume(TokenEnum.RIGHT_PAREN, "Expect ')' after for clauses.");
+
+    let body = this.statement();
+    if (increment !== null) body = new Stmt.Block([body, new Stmt.Expression(increment)]);
+    if (condition === null) condition = new Expr.Literal(true);
+
+    body = new Stmt.Whle(condition, body);
+
+    if (initializer !== null) body = new Stmt.Block([initializer, body]);
+
+    return body;
+  }
+
+  private ifElseStatement(): Stmt.Stmt {
+    this.consume(TokenEnum.LEFT_PAREN, "Expect '(' after 'if'.");
+    const condition = this.expression();
+    this.consume(TokenEnum.RIGHT_PAREN, "Expect ')' after if condition.");
+
+    const thenBranch = this.statement();
+    let elseBranch = null;
+    if (this.match(TokenEnum.ELSE)) {
+      elseBranch = this.statement();
+    }
+
+    return new Stmt.IfElse(condition, thenBranch, elseBranch);
   }
 
   private printStatement(): Stmt.Stmt {
@@ -62,6 +110,15 @@ export class Parser {
 
     this.consume(TokenEnum.SEMICOLON, "Expect ';' after variable declaration.");
     return new Stmt.Vrbl(name, initializer);
+  }
+
+  private whileStatement(): Stmt.Stmt {
+    this.consume(TokenEnum.LEFT_PAREN, "Expect '(' after 'while'.");
+    const condition = this.expression();
+    this.consume(TokenEnum.RIGHT_PAREN, "Expect ')' after condition.");
+    const body = this.statement();
+
+    return new Stmt.Whle(condition, body);
   }
 
   private expressionStatement(): Stmt.Stmt {
@@ -83,7 +140,7 @@ export class Parser {
   }
 
   private assignment(): Expr.Expr {
-    const expr = this.equality();
+    const expr = this.or();
 
     if (this.match(TokenEnum.EQUAL)) {
       const equals = this.previous();
@@ -95,6 +152,30 @@ export class Parser {
       }
 
       this.error(equals, "Invalid assignment target");
+    }
+
+    return expr;
+  }
+
+  private or(): Expr.Expr {
+    let expr = this.and();
+
+    while (this.match(TokenEnum.OR)) {
+      const operator = this.previous();
+      const right = this.and();
+      expr = new Expr.Logical(expr, operator, right);
+    }
+
+    return expr;
+  }
+
+  private and(): Expr.Expr {
+    let expr = this.equality();
+
+    while (this.match(TokenEnum.AND)) {
+      const operator = this.previous();
+      const right = this.equality();
+      expr = new Expr.Logical(expr, operator, right);
     }
 
     return expr;

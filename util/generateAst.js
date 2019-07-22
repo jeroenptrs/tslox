@@ -16,6 +16,7 @@ function generateAst(commands) {
       Binary: ["left: Expr", "operator: Token", "right: Expr"],
       Grouping: ["expression: Expr"],
       Literal: ["value: any"],
+      Logical: ["left: Expr", "operator: Token", "right: Expr"],
       Unary: ["operator: Token", "right: Expr"],
       Variable: ["name: Token"],
     },
@@ -28,8 +29,10 @@ function generateAst(commands) {
     {
       Block: ["statements: Stmt[]"],
       Expression: ["expr: Expr"],
+      IfElse: ["condition: Expr", "thenBranch: Stmt", "elseBranch: Stmt | null"],
       Print: ["expr: Expr"],
       Vrbl: ["name: Token", "initializer: Expr | null"],
+      Whle: ["condition: Expr", "body: Stmt"],
     },
     ["Expr", "Token"]
   );

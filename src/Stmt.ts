@@ -11,8 +11,10 @@ export default Stmt;
 export interface Visitor<R> {
   visitBlockStmt(block: Block): R;
   visitExpressionStmt(expression: Expression): R;
+  visitIfElseStmt(ifelse: IfElse): R;
   visitPrintStmt(print: Print): R;
   visitVrblStmt(vrbl: Vrbl): R;
+  visitWhleStmt(whle: Whle): R;
 }
 
 export class Block extends Stmt {
@@ -41,6 +43,23 @@ export class Expression extends Stmt {
   }
 }
 
+export class IfElse extends Stmt {
+  readonly condition: Expr;
+  readonly thenBranch: Stmt;
+  readonly elseBranch: Stmt | null;
+
+  constructor(condition: Expr, thenBranch: Stmt, elseBranch: Stmt | null) {
+    super();
+    this.condition = condition;
+    this.thenBranch = thenBranch;
+    this.elseBranch = elseBranch;
+  }
+
+  public accept<R>(visitor: Visitor<R>): R {
+    return visitor.visitIfElseStmt(this);
+  }
+}
+
 export class Print extends Stmt {
   readonly expr: Expr;
 
@@ -66,5 +85,20 @@ export class Vrbl extends Stmt {
 
   public accept<R>(visitor: Visitor<R>): R {
     return visitor.visitVrblStmt(this);
+  }
+}
+
+export class Whle extends Stmt {
+  readonly condition: Expr;
+  readonly body: Stmt;
+
+  constructor(condition: Expr, body: Stmt) {
+    super();
+    this.condition = condition;
+    this.body = body;
+  }
+
+  public accept<R>(visitor: Visitor<R>): R {
+    return visitor.visitWhleStmt(this);
   }
 }

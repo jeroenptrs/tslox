@@ -34,6 +34,18 @@ export class Interpreter implements Expr.Visitor<any>, Stmt.Visitor<void> {
     return expr.value;
   }
 
+  public visitLogicalExpr(expr: Expr.Logical) {
+    const left = this.evaluate(expr.left);
+
+    if (expr.operator.type === TokenEnum.OR) {
+      if (isTruthy(left)) return left;
+    } else {
+      if (!isTruthy(left)) return left;
+    }
+
+    return this.evaluate(expr.right);
+  }
+
   public visitUnaryExpr(expr: Expr.Unary): any {
     const right: any = this.evaluate(expr.right);
 
@@ -114,6 +126,14 @@ export class Interpreter implements Expr.Visitor<any>, Stmt.Visitor<void> {
     this.evaluate(stmt.expr);
   }
 
+  public visitIfElseStmt(stmt: Stmt.IfElse): void {
+    if (isTruthy(this.evaluate(stmt.condition))) {
+      this.execute(stmt.thenBranch);
+    } else if (stmt.elseBranch !== null) {
+      this.execute(stmt.elseBranch);
+    }
+  }
+
   public visitPrintStmt(stmt: Stmt.Expression): void {
     const value = this.evaluate(stmt.expr);
     this.stdout(stringify(value));
@@ -127,6 +147,12 @@ export class Interpreter implements Expr.Visitor<any>, Stmt.Visitor<void> {
     }
 
     this.environment.define(stmt.name.lexeme, value);
+  }
+
+  public visitWhleStmt(stmt: Stmt.Whle): void {
+    while (isTruthy(this.evaluate(stmt.condition))) {
+      this.execute(stmt.body);
+    }
   }
 
   public visitBlockStmt(stmt: Stmt.Block): void {
