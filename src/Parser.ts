@@ -32,6 +32,7 @@ export class Parser {
 
   private declaration(): Stmt.Stmt | null {
     try {
+      if (this.match(TokenEnum.FUN)) return this.fun("function");
       if (this.match(TokenEnum.VAR)) return this.varDeclaration();
       return this.statement();
     } catch (error) {
@@ -44,6 +45,7 @@ export class Parser {
     if (this.match(TokenEnum.FOR)) return this.forStatement();
     if (this.match(TokenEnum.IF)) return this.ifElseStatement();
     if (this.match(TokenEnum.PRINT)) return this.printStatement();
+    if (this.match(TokenEnum.RETURN)) return this.returnStatement();
     if (this.match(TokenEnum.WHILE)) return this.whileStatement();
     if (this.match(TokenEnum.LEFT_BRACE)) return new Stmt.Block(this.block());
     return this.expressionStatement();
@@ -100,6 +102,18 @@ export class Parser {
     return new Stmt.Print(value);
   }
 
+  private returnStatement(): Stmt.Stmt {
+    const keyword = this.previous();
+    let value = null;
+
+    if (!this.check(TokenEnum.SEMICOLON)) {
+      value = this.expression();
+    }
+
+    this.consume(TokenEnum.SEMICOLON, "Expect ';' after a return value");
+    return new Stmt.ReturnValue(keyword, value);
+  }
+
   private varDeclaration() {
     const name: Token = this.consume(TokenEnum.IDENTIFIER, "Expect variable name");
     let initializer: Expr.Expr | null = null;
@@ -127,6 +141,28 @@ export class Parser {
     return new Stmt.Expression(expr);
   }
 
+  private fun(kind: string): Stmt.Fun {
+    const name = this.consume(TokenEnum.IDENTIFIER, `Expected ${kind} name.`);
+
+    this.consume(TokenEnum.LEFT_PAREN, `Expected '(' after ${kind} name.`);
+    const params = new Array<Token>();
+    if (!this.check(TokenEnum.RIGHT_PAREN)) {
+      do {
+        if (params.length >= 8) {
+          throw this.error(this.peek(), "Cannot have more than 8 parameters.");
+        }
+
+        params.push(this.consume(TokenEnum.IDENTIFIER, "Expect parameter name."));
+      } while (this.match(TokenEnum.COMMA));
+    }
+    this.consume(TokenEnum.RIGHT_PAREN, "Expect ')' after parameters.");
+
+    this.consume(TokenEnum.LEFT_BRACE, "Expect '{' after parameters.");
+    const funBody = this.block();
+
+    return new Stmt.Fun(name, params, funBody);
+  }
+
   private block(): Stmt.Stmt[] {
     const statements = new Array<Stmt.Stmt>();
 
@@ -151,7 +187,7 @@ export class Parser {
         return new Expr.Assign(name, value);
       }
 
-      this.error(equals, "Invalid assignment target");
+      throw this.error(equals, "Invalid assignment target");
     }
 
     return expr;
@@ -238,7 +274,21 @@ export class Parser {
       return new Expr.Unary(operator, right);
     }
 
-    return this.primary();
+    return this.call();
+  }
+
+  private call(): Expr.Expr {
+    let expr = this.primary();
+
+    while (true) {
+      if (this.match(TokenEnum.LEFT_PAREN)) {
+        expr = this.finishCall(expr);
+      } else {
+        break;
+      }
+    }
+
+    return expr;
   }
 
   private primary(): Expr.Expr {
@@ -261,6 +311,23 @@ export class Parser {
     }
 
     throw this.error(this.peek(), "Expect expression.");
+  }
+
+  private finishCall(callee: Expr.Expr) {
+    const args = new Array<Expr.Expr>();
+
+    if (!this.check(TokenEnum.RIGHT_PAREN)) {
+      do {
+        if (args.length >= 8) {
+          throw this.error(this.peek(), "Cannot have more than 8 arguments");
+        }
+        args.push(this.expression());
+      } while (this.match(TokenEnum.COMMA));
+    }
+
+    const paren = this.consume(TokenEnum.RIGHT_PAREN, "Expect ')' after arguments.");
+
+    return new Expr.Call(callee, paren, args);
   }
 
   private match(...types: TokenEnum[]): boolean {

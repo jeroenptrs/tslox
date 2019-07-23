@@ -1,19 +1,26 @@
+import { Clock } from "./Clock";
 import { Environment } from "./Environment";
 import * as Expr from "./Expr";
+import { LoxCallable } from "./LoxCallable";
+import { LoxFun } from "./LoxFun";
 import { checkNumberOperand, checkNumberOperands, isEqual, isTruthy } from "./helpers/checks";
 import { stringify } from "./helpers/stringify";
+import { Return } from "./Return";
 import { RuntimeError } from "./RuntimeError";
 import * as Stmt from "./Stmt";
 import { LogRuntimeError, TokenEnum } from "./types";
 
 export class Interpreter implements Expr.Visitor<any>, Stmt.Visitor<void> {
+  readonly globals = new Environment();
   private stdout: (m: string) => void;
   private errorLogger: LogRuntimeError;
-  private environment = new Environment();
+  private environment = this.globals;
 
   constructor(stdout: (m: string) => void, errorLogger: LogRuntimeError) {
     this.errorLogger = errorLogger;
     this.stdout = stdout;
+
+    this.globals.define("clock", new Clock());
   }
 
   public interpret(statements: Stmt.Stmt[]): void {
@@ -122,8 +129,36 @@ export class Interpreter implements Expr.Visitor<any>, Stmt.Visitor<void> {
     return null;
   }
 
+  public visitCallExpr(expr: Expr.Call): any {
+    const callee = this.evaluate(expr.callee);
+
+    const args = new Array<any>();
+    for (const arg of expr.args) {
+      args.push(this.evaluate(arg));
+    }
+
+    if (!(callee instanceof LoxCallable)) {
+      throw new RuntimeError(expr.paren, "Can only call functions and classes.");
+    }
+
+    const f: LoxCallable = callee;
+    if (args.length !== f.arity) {
+      throw new RuntimeError(
+        expr.paren,
+        `Expected ${f.arity} arguments but got ${args.length} instead.`
+      );
+    }
+
+    return f.call(this, args);
+  }
+
   public visitExpressionStmt(stmt: Stmt.Expression): void {
     this.evaluate(stmt.expr);
+  }
+
+  public visitFunStmt(stmt: Stmt.Fun): void {
+    const fun = new LoxFun(stmt, this.environment);
+    this.environment.define(stmt.name.lexeme, fun);
   }
 
   public visitIfElseStmt(stmt: Stmt.IfElse): void {
@@ -137,6 +172,12 @@ export class Interpreter implements Expr.Visitor<any>, Stmt.Visitor<void> {
   public visitPrintStmt(stmt: Stmt.Expression): void {
     const value = this.evaluate(stmt.expr);
     this.stdout(stringify(value));
+  }
+
+  public visitReturnValueStmt(stmt: Stmt.ReturnValue): void {
+    let value = null;
+    if (stmt.value) value = this.evaluate(stmt.value);
+    throw new Return(value);
   }
 
   public visitVrblStmt(stmt: Stmt.Vrbl): void {
@@ -167,7 +208,7 @@ export class Interpreter implements Expr.Visitor<any>, Stmt.Visitor<void> {
     stmt.accept(this);
   }
 
-  private executeBlock(statements: Stmt.Stmt[], environment: Environment): void {
+  public executeBlock(statements: Stmt.Stmt[], environment: Environment): void {
     const previous = this.environment;
     try {
       this.environment = environment;

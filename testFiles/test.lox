@@ -1,3 +1,5 @@
+var now1 = clock();
+
 var a = nil;
 var b = 1;
 
@@ -6,7 +8,9 @@ if (a) {
 } else if (b == 2) {
   a = 2;
 } else {
+  var now2 = clock();
   a = 3;
+  print now2;
 }
 
 print a;
@@ -16,3 +20,36 @@ for (var c = 0; c < 10; c = c + d) {
   print c;
   if (d < 3) d = d + 1;
 }
+
+print now1;
+
+fun sayHi(first, last) {
+  print "Hi, " + first + " " + last + "!";
+}
+
+sayHi("Dear", "Reader");
+
+fun fibonacci(n) {
+  if (n <= 1) return n;
+  return fibonacci(n - 2) + fibonacci(n - 1);
+}
+
+for (var i = 0; i < 10; i = i + 1) {
+  print fibonacci(i);
+}
+
+fun makePoint(x, y) {
+  fun closure(method) {
+    if (method == "x") return x;
+    if (method == "y") return y;
+    print "unknown method " + method;
+  }
+
+  return closure;
+}
+
+var point = makePoint(2, 3);
+print point("x"); // "2".
+print point("y"); // "3".
+
+

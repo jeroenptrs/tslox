@@ -10,6 +10,7 @@ export default Expr;
 export interface Visitor<R> {
   visitAssignExpr(assign: Assign): R;
   visitBinaryExpr(binary: Binary): R;
+  visitCallExpr(call: Call): R;
   visitGroupingExpr(grouping: Grouping): R;
   visitLiteralExpr(literal: Literal): R;
   visitLogicalExpr(logical: Logical): R;
@@ -46,6 +47,23 @@ export class Binary extends Expr {
 
   public accept<R>(visitor: Visitor<R>): R {
     return visitor.visitBinaryExpr(this);
+  }
+}
+
+export class Call extends Expr {
+  readonly callee: Expr;
+  readonly paren: Token;
+  readonly args: Expr[];
+
+  constructor(callee: Expr, paren: Token, args: Expr[]) {
+    super();
+    this.callee = callee;
+    this.paren = paren;
+    this.args = args;
+  }
+
+  public accept<R>(visitor: Visitor<R>): R {
+    return visitor.visitCallExpr(this);
   }
 }
 

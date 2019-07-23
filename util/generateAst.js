@@ -14,6 +14,7 @@ function generateAst(commands) {
     {
       Assign: ["name: Token", "value: Expr"],
       Binary: ["left: Expr", "operator: Token", "right: Expr"],
+      Call: ["callee: Expr", "paren: Token", "args: Expr[]"],
       Grouping: ["expression: Expr"],
       Literal: ["value: any"],
       Logical: ["left: Expr", "operator: Token", "right: Expr"],
@@ -29,8 +30,10 @@ function generateAst(commands) {
     {
       Block: ["statements: Stmt[]"],
       Expression: ["expr: Expr"],
+      Fun: ["name: Token", "params: Token[]", "funBody: Stmt[]"],
       IfElse: ["condition: Expr", "thenBranch: Stmt", "elseBranch: Stmt | null"],
       Print: ["expr: Expr"],
+      ReturnValue: ["keyword: Token", "value: Expr | null"],
       Vrbl: ["name: Token", "initializer: Expr | null"],
       Whle: ["condition: Expr", "body: Stmt"],
     },

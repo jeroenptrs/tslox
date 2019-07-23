@@ -11,8 +11,10 @@ export default Stmt;
 export interface Visitor<R> {
   visitBlockStmt(block: Block): R;
   visitExpressionStmt(expression: Expression): R;
+  visitFunStmt(fun: Fun): R;
   visitIfElseStmt(ifelse: IfElse): R;
   visitPrintStmt(print: Print): R;
+  visitReturnValueStmt(returnvalue: ReturnValue): R;
   visitVrblStmt(vrbl: Vrbl): R;
   visitWhleStmt(whle: Whle): R;
 }
@@ -43,6 +45,23 @@ export class Expression extends Stmt {
   }
 }
 
+export class Fun extends Stmt {
+  readonly name: Token;
+  readonly params: Token[];
+  readonly funBody: Stmt[];
+
+  constructor(name: Token, params: Token[], funBody: Stmt[]) {
+    super();
+    this.name = name;
+    this.params = params;
+    this.funBody = funBody;
+  }
+
+  public accept<R>(visitor: Visitor<R>): R {
+    return visitor.visitFunStmt(this);
+  }
+}
+
 export class IfElse extends Stmt {
   readonly condition: Expr;
   readonly thenBranch: Stmt;
@@ -70,6 +89,21 @@ export class Print extends Stmt {
 
   public accept<R>(visitor: Visitor<R>): R {
     return visitor.visitPrintStmt(this);
+  }
+}
+
+export class ReturnValue extends Stmt {
+  readonly keyword: Token;
+  readonly value: Expr | null;
+
+  constructor(keyword: Token, value: Expr | null) {
+    super();
+    this.keyword = keyword;
+    this.value = value;
+  }
+
+  public accept<R>(visitor: Visitor<R>): R {
+    return visitor.visitReturnValueStmt(this);
   }
 }
 
