@@ -10,21 +10,23 @@
     "build": "tsdx build",
     "clean": "shx rm -rf dist",
     "file": "node util/runFile.js",
+    "createExec": "yarn build && pkg -t node12-macos-x64 util/runFile.js && shx mv runFile tslox",
     "start": "tsdx watch",
     "test": "tsdx test"
   },
   "dependencies": {},
   "devDependencies": {
-    "@types/node": "^12.6.6",
     "@types/jest": "^24.0.15",
+    "@types/node": "^12.6.6",
+    "concurrently": "^4.1.1",
     "husky": "^3.0.1",
+    "nodemon": "^1.19.1",
+    "pkg": "^4.4.0",
     "prettier": "^1.18.2",
     "pretty-quick": "^1.11.1",
+    "shx": "^0.3.2",
     "tsdx": "^0.7.2",
     "tslib": "^1.10.0",
-    "concurrently": "^4.1.1",
-    "nodemon": "^1.19.1",
-    "shx": "^0.3.2",
     "typescript": "^3.5.3"
   },
   "husky": {
