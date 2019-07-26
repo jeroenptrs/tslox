@@ -1,0 +1,24 @@
+fun testClassFactory(c) {
+  var testClassProperty = c;
+  fun testClass(p, v) {
+    if (p == "set") {
+      testClassProperty = v;
+      return nil;
+    }
+
+    if (p == "get") {
+      return testClassProperty;
+    }
+  }
+
+  return testClass;
+}
+
+var a = testClassFactory(3);
+var b = testClassFactory("a");
+
+b("set", "b");
+print a("get", nil);
+print b("get", nil);
+a("set", nil);
+print a("get", nil);

@@ -8,7 +8,8 @@ class ParseError extends Error {}
 export class Parser {
   private errorLogger: LogError;
   private readonly tokens: Token[];
-  private current: number = 0;
+  private current = 0;
+  private forFlag: string | undefined;
 
   constructor(tokens: Token[], errorLogger: LogError) {
     this.tokens = tokens;
@@ -54,6 +55,7 @@ export class Parser {
   private forStatement(): Stmt.Stmt {
     this.consume(TokenEnum.LEFT_PAREN, "Expect '(' after 'for'.");
 
+    this.forFlag = "initializer";
     let initializer: Stmt.Stmt | null;
     if (this.match(TokenEnum.SEMICOLON)) {
       initializer = null;
@@ -63,13 +65,16 @@ export class Parser {
       initializer = this.expressionStatement();
     }
 
+    this.forFlag = "condition";
     let condition: Expr.Expr | null = !this.check(TokenEnum.SEMICOLON) ? this.expression() : null;
     this.consume(TokenEnum.SEMICOLON, "Expect ';' after loop condition.");
 
+    this.forFlag = "increment";
     const increment: Expr.Expr | null = !this.check(TokenEnum.RIGHT_PAREN)
       ? this.expression()
       : null;
     this.consume(TokenEnum.RIGHT_PAREN, "Expect ')' after for clauses.");
+    this.forFlag = undefined;
 
     let body = this.statement();
     if (increment !== null) body = new Stmt.Block([body, new Stmt.Expression(increment)]);
@@ -301,7 +306,9 @@ export class Parser {
     }
 
     if (this.match(TokenEnum.IDENTIFIER)) {
-      return new Expr.Variable(this.previous());
+      const p = this.previous();
+      if (this.forFlag) p.flag = this.forFlag;
+      return new Expr.Variable(p);
     }
 
     if (this.match(TokenEnum.LEFT_PAREN)) {

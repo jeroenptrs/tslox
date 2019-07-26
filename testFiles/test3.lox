@@ -1,0 +1,13 @@
+{
+  var d = 0;
+  while (d < 10) {
+    {
+      print d;
+    }
+    d = d + 1;
+  }
+}
+
+for (var d = 0; d < 10; d = d + 1) {
+  print d;
+}

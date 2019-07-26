@@ -5,6 +5,7 @@ export class Token implements TokenType {
   readonly lexeme: string;
   readonly literal: any;
   readonly line: number;
+  public flag?: string = undefined;
 
   constructor(type: TokenEnum, lexeme: string, literal: any, line: number) {
     this.type = type;

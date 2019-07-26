@@ -1,6 +1,7 @@
 // import { AstPrinter } from './AstPrinter';
 import { Interpreter } from "./Interpreter";
 import { Parser } from "./Parser";
+import { Resolver } from "./Resolver";
 import { RuntimeError } from "./RuntimeError";
 import { Scanner } from "./Scanner";
 import { Token } from "./Token";
@@ -16,7 +17,7 @@ export class Lox {
 
   private stdout = (m: string) => this.logger.log(m);
   private runtimeError = (error: RuntimeError) => {
-    this.logger.error(`${error.message}\n[line ${error.token.line}]`);
+    if (error.token) this.logger.error(`${error.message}\n[line ${error!.token!.line}]`);
     this.hadRuntimeError = true;
   };
 
@@ -32,13 +33,16 @@ export class Lox {
     try {
       const tokens = new Scanner(source, this.error).scanTokens();
       const statements = new Parser(tokens, this.error).parse();
-      const errors = this.hadError || this.hadRuntimeError;
+      const resolver = new Resolver(this.interpreter, this.error);
+      resolver.resolve(statements);
 
+      const errors = this.hadError || this.hadRuntimeError;
       if (errors) return false;
 
       this.interpreter.interpret(statements);
       return true;
     } catch (err) {
+      console.error(err);
       return false;
     }
   }

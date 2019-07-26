@@ -1,0 +1,41 @@
+fun printLn() {
+  print "";
+}
+
+print "full for";
+for (var d = 0; d < 5; d = d + 1) {
+  print d;
+}
+
+printLn();
+
+print "reassignment";
+var d = 2;
+for (d = 0; d < 5; d = d + 1) {
+  print d;
+}
+
+printLn();
+
+print "no variable call at all";
+var d = 0;
+for (; d < 5; d = d + 1) {
+  print d;
+}
+
+printLn();
+
+print "self managed increment";
+var d = 0;
+for (; d < 5;) {
+  print d;
+  d = d + 1;
+}
+
+// printLn();
+
+// print "[RISKY]: infinite loop";
+// var d = 0;
+// for (;;) {
+//   print d;
+// }

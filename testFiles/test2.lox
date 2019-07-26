@@ -1,3 +1,5 @@
+return "toplevel";
+
 fun scope(a) {
   var a = "local";
   print a;
