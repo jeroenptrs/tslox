@@ -45,6 +45,13 @@ export class Parser {
 
   private classDeclaration(): Stmt.Stmt {
     const name = this.consume(TokenEnum.IDENTIFIER, "Expect class name.");
+    let superclass: Expr.Variable | null = null;
+
+    if (this.match(TokenEnum.LESS)) {
+      this.consume(TokenEnum.IDENTIFIER, "Expect superclass name.");
+      superclass = new Expr.Variable(this.previous());
+    }
+
     this.consume(TokenEnum.LEFT_BRACE, "Expect '{' before class body.");
 
     const methods = new Array<Stmt.Fun>();
@@ -54,7 +61,7 @@ export class Parser {
 
     this.consume(TokenEnum.RIGHT_BRACE, "Expect '}' before class body.");
 
-    return new Stmt.Cls(name, methods);
+    return new Stmt.Cls(name, superclass, methods);
   }
 
   private statement(): Stmt.Stmt {
@@ -324,6 +331,13 @@ export class Parser {
 
     if (this.match(TokenEnum.NUMBER, TokenEnum.STRING)) {
       return new Expr.Literal(this.previous().literal);
+    }
+
+    if (this.match(TokenEnum.SUPER)) {
+      const keyword = this.previous();
+      this.consume(TokenEnum.DOT, "Expect '.' after 'super'.");
+      const method = this.consume(TokenEnum.IDENTIFIER, "Expect superclass method name.");
+      return new Expr.Spr(keyword, method);
     }
 
     if (this.match(TokenEnum.THIS)) return new Expr.Ths(this.previous());

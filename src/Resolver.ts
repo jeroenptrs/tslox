@@ -14,6 +14,7 @@ enum FnType {
 enum ClsType {
   NONE = 0,
   CLASS,
+  SUBCLASS,
 }
 
 export class Resolver implements Expr.Visitor<any>, Stmt.Visitor<any> {
@@ -41,6 +42,18 @@ export class Resolver implements Expr.Visitor<any>, Stmt.Visitor<any> {
     this.declare(stmt.name);
     this.define(stmt.name);
 
+    if (stmt.superclass !== null) {
+      if (stmt.name.lexeme === stmt.superclass.name.lexeme)
+        this.errorLogger(stmt.superclass.name, "A class cannot inherit from itself.");
+      else {
+        this.currentClass = ClsType.SUBCLASS;
+        this.resolve(stmt.superclass);
+      }
+
+      this.beginScope();
+      this.scopes[this.scopes.length - 1]["super"] = true;
+    }
+
     this.beginScope();
     this.scopes[this.scopes.length - 1]["this"] = true;
 
@@ -50,6 +63,8 @@ export class Resolver implements Expr.Visitor<any>, Stmt.Visitor<any> {
     }
 
     this.endScope();
+
+    if (stmt.superclass !== null) this.endScope();
 
     this.currentClass = enclosingClass;
   }
@@ -144,6 +159,16 @@ export class Resolver implements Expr.Visitor<any>, Stmt.Visitor<any> {
   public visitSetExpr(expr: Expr.Set): void {
     this.resolve(expr.value);
     this.resolve(expr.obj);
+  }
+
+  public visitSprExpr(expr: Expr.Spr): void {
+    if (this.currentClass === ClsType.NONE) {
+      this.errorLogger(expr.keyword, "Cannot use 'super' outside of a class.");
+    } else if (this.currentClass !== ClsType.SUBCLASS) {
+      this.errorLogger(expr.keyword, "Cannot use 'super' in a class with no superclass.");
+    }
+
+    this.resolveLocal(expr, expr.keyword);
   }
 
   public visitThsExpr(expr: Expr.Ths): void {

@@ -6,11 +6,13 @@ import { LoxFun } from "./LoxFun";
 export class LoxClass extends LoxCallable {
   readonly name: string;
   private readonly methods: Record<string, LoxFun>;
+  private superclass: LoxClass | null;
 
-  constructor(name: string, methods: Record<string, LoxFun>) {
+  constructor(name: string, superclass: LoxClass | null, methods: Record<string, LoxFun>) {
     super();
 
     this.name = name;
+    this.superclass = superclass;
     this.methods = methods;
   }
 
@@ -29,6 +31,10 @@ export class LoxClass extends LoxCallable {
   public findMethod(name: string): LoxFun | null {
     if (Object.keys(this.methods).includes(name)) {
       return this.methods[name];
+    }
+
+    if (this.superclass !== null) {
+      return this.superclass.findMethod(name);
     }
 
     return null;

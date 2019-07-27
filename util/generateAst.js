@@ -20,6 +20,7 @@ function generateAst(commands) {
       Literal: ["value: any"],
       Logical: ["left: Expr", "operator: Token", "right: Expr"],
       Set: ["obj: Expr", "name: Token", "value: Expr"],
+      Spr: ["keyword: Token", "method: Token"],
       Ths: ["keyword: Token"],
       Unary: ["operator: Token", "right: Expr"],
       Variable: ["name: Token"],
@@ -32,7 +33,7 @@ function generateAst(commands) {
     "Stmt",
     {
       Block: ["statements: Stmt[]"],
-      Cls: ["name: Token", "methods: Fun[]"],
+      Cls: ["name: Token", "superclass: Variable | null", "methods: Fun[]"],
       Expression: ["expr: Expr"],
       Fun: ["name: Token", "params: Token[]", "funBody: Stmt[]"],
       IfElse: ["condition: Expr", "thenBranch: Stmt", "elseBranch: Stmt | null"],
@@ -41,7 +42,7 @@ function generateAst(commands) {
       Vrbl: ["name: Token", "initializer: Expr | null"],
       Whle: ["condition: Expr", "body: Stmt"],
     },
-    ["Expr", "Token"]
+    [["Expr", "Variable"], "Token"]
   );
 }
 
@@ -66,7 +67,12 @@ ${typeNames.map(type => defineType(baseName, type, types[type])).join("\n")}`;
 }
 
 function defineImports(imports) {
-  return imports.map(i => `import { ${i} } from "./${i}";`).join("\n");
+  return imports
+    .map(
+      i =>
+        `import { ${Array.isArray(i) ? i.join(", ") : i} } from "./${Array.isArray(i) ? i[0] : i}";`
+    )
+    .join("\n");
 }
 
 function defineVisitorInterface(baseName, types) {

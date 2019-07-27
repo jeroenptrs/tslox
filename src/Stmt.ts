@@ -1,5 +1,5 @@
 // GENERATED FILE! DO NOT EDIT!
-import { Expr } from "./Expr";
+import { Expr, Variable } from "./Expr";
 import { Token } from "./Token";
 
 export abstract class Stmt {
@@ -35,11 +35,13 @@ export class Block extends Stmt {
 
 export class Cls extends Stmt {
   readonly name: Token;
+  readonly superclass: Variable | null;
   readonly methods: Fun[];
 
-  constructor(name: Token, methods: Fun[]) {
+  constructor(name: Token, superclass: Variable | null, methods: Fun[]) {
     super();
     this.name = name;
+    this.superclass = superclass;
     this.methods = methods;
   }
 

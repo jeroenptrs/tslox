@@ -71,6 +71,21 @@ export class Interpreter implements Expr.Visitor<any>, Stmt.Visitor<void> {
     return value;
   }
 
+  public visitSprExpr(expr: Expr.Spr): any {
+    const objectHash = this.objectHash(expr);
+    const distance = this.locals[objectHash];
+    const superclass = this.environment.getAt(distance, "super") as LoxClass;
+
+    const obj = this.environment.getAt(distance - 1, "this");
+
+    const method = superclass.findMethod(expr.method.lexeme);
+
+    if (method === null)
+      throw new RuntimeError(expr.method, `Undefined property ${expr.method.lexeme}.`);
+
+    return method.bind(obj);
+  }
+
   public visitUnaryExpr(expr: Expr.Unary): any {
     const right: any = this.evaluate(expr.right);
 
@@ -239,7 +254,20 @@ export class Interpreter implements Expr.Visitor<any>, Stmt.Visitor<void> {
   }
 
   public visitClsStmt(stmt: Stmt.Cls): void {
+    let superclass = null;
+    if (stmt.superclass !== null) {
+      superclass = this.evaluate(stmt.superclass);
+      if (!(superclass instanceof LoxClass)) {
+        throw new RuntimeError(stmt.superclass.name, "Superclass must be a class");
+      }
+    }
+
     this.environment.define(stmt.name.lexeme, null);
+
+    if (stmt.superclass !== null && superclass !== null) {
+      this.environment = new Environment(this.environment);
+      this.environment.define("super", superclass);
+    }
 
     const methods: Record<string, LoxFun> = {};
     for (const method of stmt.methods) {
@@ -247,7 +275,11 @@ export class Interpreter implements Expr.Visitor<any>, Stmt.Visitor<void> {
       methods[method.name.lexeme] = fn;
     }
 
-    const cls = new LoxClass(stmt.name.lexeme, methods);
+    const cls = new LoxClass(stmt.name.lexeme, superclass, methods);
+
+    if (superclass !== null) {
+      this.environment = this.environment.enclosing as Environment;
+    }
 
     this.environment.assign(stmt.name, cls);
   }

@@ -16,6 +16,7 @@ export interface Visitor<R> {
   visitLiteralExpr(literal: Literal): R;
   visitLogicalExpr(logical: Logical): R;
   visitSetExpr(set: Set): R;
+  visitSprExpr(spr: Spr): R;
   visitThsExpr(ths: Ths): R;
   visitUnaryExpr(unary: Unary): R;
   visitVariableExpr(variable: Variable): R;
@@ -142,6 +143,21 @@ export class Set extends Expr {
 
   public accept<R>(visitor: Visitor<R>): R {
     return visitor.visitSetExpr(this);
+  }
+}
+
+export class Spr extends Expr {
+  readonly keyword: Token;
+  readonly method: Token;
+
+  constructor(keyword: Token, method: Token) {
+    super();
+    this.keyword = keyword;
+    this.method = method;
+  }
+
+  public accept<R>(visitor: Visitor<R>): R {
+    return visitor.visitSprExpr(this);
   }
 }
 

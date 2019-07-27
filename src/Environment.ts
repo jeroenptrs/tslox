@@ -2,8 +2,8 @@ import { RuntimeError } from "./RuntimeError";
 import { Token } from "./Token";
 
 export class Environment {
-  private readonly enclosing: Environment | null;
   private values: Record<string, any> = {};
+  public readonly enclosing: Environment | null;
 
   constructor(enclosing?: Environment) {
     this.enclosing = enclosing || null;
