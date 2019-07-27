@@ -33,6 +33,7 @@ export class Parser {
 
   private declaration(): Stmt.Stmt | null {
     try {
+      if (this.match(TokenEnum.CLASS)) return this.classDeclaration();
       if (this.match(TokenEnum.FUN)) return this.fun("function");
       if (this.match(TokenEnum.VAR)) return this.varDeclaration();
       return this.statement();
@@ -40,6 +41,20 @@ export class Parser {
       this.synchronize();
       return null;
     }
+  }
+
+  private classDeclaration(): Stmt.Stmt {
+    const name = this.consume(TokenEnum.IDENTIFIER, "Expect class name.");
+    this.consume(TokenEnum.LEFT_BRACE, "Expect '{' before class body.");
+
+    const methods = new Array<Stmt.Fun>();
+    while (!this.check(TokenEnum.RIGHT_BRACE) && !this.isAtEnd()) {
+      methods.push(this.fun("method"));
+    }
+
+    this.consume(TokenEnum.RIGHT_BRACE, "Expect '}' before class body.");
+
+    return new Stmt.Cls(name, methods);
   }
 
   private statement(): Stmt.Stmt {
@@ -188,8 +203,11 @@ export class Parser {
       const value = this.assignment();
 
       if (expr instanceof Expr.Variable) {
-        const name = expr.name;
+        const { name } = expr;
         return new Expr.Assign(name, value);
+      } else if (expr instanceof Expr.Get) {
+        const { obj, name } = expr;
+        return new Expr.Set(obj, name, value);
       }
 
       throw this.error(equals, "Invalid assignment target");
@@ -288,6 +306,9 @@ export class Parser {
     while (true) {
       if (this.match(TokenEnum.LEFT_PAREN)) {
         expr = this.finishCall(expr);
+      } else if (this.match(TokenEnum.DOT)) {
+        const name = this.consume(TokenEnum.IDENTIFIER, "Expect property name after '.'.");
+        expr = new Expr.Get(expr, name);
       } else {
         break;
       }
@@ -304,6 +325,8 @@ export class Parser {
     if (this.match(TokenEnum.NUMBER, TokenEnum.STRING)) {
       return new Expr.Literal(this.previous().literal);
     }
+
+    if (this.match(TokenEnum.THIS)) return new Expr.Ths(this.previous());
 
     if (this.match(TokenEnum.IDENTIFIER)) {
       const p = this.previous();

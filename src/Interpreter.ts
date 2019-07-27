@@ -6,12 +6,14 @@ import * as Expr from "./Expr";
 import { checkNumberOperand, checkNumberOperands, isEqual, isTruthy } from "./helpers/checks";
 import { stringify } from "./helpers/stringify";
 import { LoxCallable } from "./LoxCallable";
+import { LoxClass } from "./LoxClass";
 import { LoxFun } from "./LoxFun";
 import { Return } from "./Return";
 import { RuntimeError } from "./RuntimeError";
 import * as Stmt from "./Stmt";
 import { Token } from "./Token";
 import { LogRuntimeError, TokenEnum } from "./types";
+import { LoxInstance } from "./LoxInstance";
 
 export class Interpreter implements Expr.Visitor<any>, Stmt.Visitor<void> {
   readonly globals = new Environment();
@@ -55,6 +57,18 @@ export class Interpreter implements Expr.Visitor<any>, Stmt.Visitor<void> {
     }
 
     return this.evaluate(expr.right);
+  }
+
+  public visitSetExpr(expr: Expr.Set): any {
+    const obj = this.evaluate(expr.obj);
+
+    if (!(obj instanceof LoxInstance)) {
+      throw new RuntimeError(expr.name, "Only instances have fields.");
+    }
+
+    const value = this.evaluate(expr.value);
+    obj.set(expr.name, value);
+    return value;
   }
 
   public visitUnaryExpr(expr: Expr.Unary): any {
@@ -163,12 +177,25 @@ export class Interpreter implements Expr.Visitor<any>, Stmt.Visitor<void> {
     return f.call(this, args);
   }
 
+  public visitGetExpr(expr: Expr.Get): any {
+    const obj: any = this.evaluate(expr.obj);
+    if (obj instanceof LoxInstance) {
+      return obj.get(expr.name);
+    }
+
+    throw new RuntimeError(expr.name, "Only instances have properties");
+  }
+
+  public visitThsExpr(expr: Expr.Ths): any {
+    return this.lookUpVariable(expr.keyword, expr);
+  }
+
   public visitExpressionStmt(stmt: Stmt.Expression): void {
     this.evaluate(stmt.expr);
   }
 
   public visitFunStmt(stmt: Stmt.Fun): void {
-    const fun = new LoxFun(stmt, this.environment);
+    const fun = new LoxFun(stmt, this.environment, false);
     this.environment.define(stmt.name.lexeme, fun);
   }
 
@@ -209,6 +236,20 @@ export class Interpreter implements Expr.Visitor<any>, Stmt.Visitor<void> {
 
   public visitBlockStmt(stmt: Stmt.Block): void {
     this.executeBlock(stmt.statements, new Environment(this.environment));
+  }
+
+  public visitClsStmt(stmt: Stmt.Cls): void {
+    this.environment.define(stmt.name.lexeme, null);
+
+    const methods: Record<string, LoxFun> = {};
+    for (const method of stmt.methods) {
+      const fn = new LoxFun(method, this.environment, method.name.lexeme === "init");
+      methods[method.name.lexeme] = fn;
+    }
+
+    const cls = new LoxClass(stmt.name.lexeme, methods);
+
+    this.environment.assign(stmt.name, cls);
   }
 
   private lookUpVariable(name: Token, expr: Expr.Expr): any {

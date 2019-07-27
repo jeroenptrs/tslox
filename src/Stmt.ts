@@ -10,6 +10,7 @@ export default Stmt;
 
 export interface Visitor<R> {
   visitBlockStmt(block: Block): R;
+  visitClsStmt(cls: Cls): R;
   visitExpressionStmt(expression: Expression): R;
   visitFunStmt(fun: Fun): R;
   visitIfElseStmt(ifelse: IfElse): R;
@@ -29,6 +30,21 @@ export class Block extends Stmt {
 
   public accept<R>(visitor: Visitor<R>): R {
     return visitor.visitBlockStmt(this);
+  }
+}
+
+export class Cls extends Stmt {
+  readonly name: Token;
+  readonly methods: Fun[];
+
+  constructor(name: Token, methods: Fun[]) {
+    super();
+    this.name = name;
+    this.methods = methods;
+  }
+
+  public accept<R>(visitor: Visitor<R>): R {
+    return visitor.visitClsStmt(this);
   }
 }
 

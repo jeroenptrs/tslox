@@ -7,6 +7,13 @@ import { LogError } from "./types";
 enum FnType {
   NONE = 0,
   FN,
+  INITIALIZER,
+  METHOD,
+}
+
+enum ClsType {
+  NONE = 0,
+  CLASS,
 }
 
 export class Resolver implements Expr.Visitor<any>, Stmt.Visitor<any> {
@@ -14,6 +21,7 @@ export class Resolver implements Expr.Visitor<any>, Stmt.Visitor<any> {
   private readonly scopes: Record<string, boolean>[] = [];
   private errorLogger: LogError;
   private currentFunction: FnType = FnType.NONE;
+  private currentClass: ClsType = ClsType.NONE;
 
   constructor(interpreter: Interpreter, errorLogger: LogError) {
     this.interpreter = interpreter;
@@ -24,6 +32,26 @@ export class Resolver implements Expr.Visitor<any>, Stmt.Visitor<any> {
     this.beginScope();
     this.resolve(stmt.statements);
     this.endScope();
+  }
+
+  public visitClsStmt(stmt: Stmt.Cls): void {
+    const enclosingClass = this.currentClass;
+    this.currentClass = ClsType.CLASS;
+
+    this.declare(stmt.name);
+    this.define(stmt.name);
+
+    this.beginScope();
+    this.scopes[this.scopes.length - 1]["this"] = true;
+
+    for (const method of stmt.methods) {
+      const declaration = method.name.lexeme === "init" ? FnType.INITIALIZER : FnType.METHOD;
+      this.resolveFunction(method, declaration);
+    }
+
+    this.endScope();
+
+    this.currentClass = enclosingClass;
   }
 
   public visitExpressionStmt(stmt: Stmt.Expression): void {
@@ -53,6 +81,10 @@ export class Resolver implements Expr.Visitor<any>, Stmt.Visitor<any> {
     }
 
     if (stmt.value !== null) {
+      if (this.currentFunction === FnType.INITIALIZER) {
+        this.errorLogger(stmt.keyword, "Cannot return a value from an initializer");
+      }
+
       this.resolve(stmt.value);
     }
   }
@@ -86,6 +118,10 @@ export class Resolver implements Expr.Visitor<any>, Stmt.Visitor<any> {
     }
   }
 
+  public visitGetExpr(expr: Expr.Get): void {
+    this.resolve(expr.obj);
+  }
+
   public visitGroupingExpr(expr: Expr.Grouping): void {
     this.resolve(expr.expression);
   }
@@ -103,6 +139,20 @@ export class Resolver implements Expr.Visitor<any>, Stmt.Visitor<any> {
   public visitLogicalExpr(expr: Expr.Logical): void {
     this.resolve(expr.left);
     this.resolve(expr.right);
+  }
+
+  public visitSetExpr(expr: Expr.Set): void {
+    this.resolve(expr.value);
+    this.resolve(expr.obj);
+  }
+
+  public visitThsExpr(expr: Expr.Ths): void {
+    if (this.currentClass === ClsType.NONE) {
+      this.errorLogger(expr.keyword, "Cannot use 'this' outside of a class.");
+      return;
+    }
+
+    this.resolveLocal(expr, expr.keyword);
   }
 
   public visitUnaryExpr(expr: Expr.Unary): void {

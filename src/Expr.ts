@@ -11,9 +11,12 @@ export interface Visitor<R> {
   visitAssignExpr(assign: Assign): R;
   visitBinaryExpr(binary: Binary): R;
   visitCallExpr(call: Call): R;
+  visitGetExpr(get: Get): R;
   visitGroupingExpr(grouping: Grouping): R;
   visitLiteralExpr(literal: Literal): R;
   visitLogicalExpr(logical: Logical): R;
+  visitSetExpr(set: Set): R;
+  visitThsExpr(ths: Ths): R;
   visitUnaryExpr(unary: Unary): R;
   visitVariableExpr(variable: Variable): R;
 }
@@ -67,6 +70,21 @@ export class Call extends Expr {
   }
 }
 
+export class Get extends Expr {
+  readonly obj: Expr;
+  readonly name: Token;
+
+  constructor(obj: Expr, name: Token) {
+    super();
+    this.obj = obj;
+    this.name = name;
+  }
+
+  public accept<R>(visitor: Visitor<R>): R {
+    return visitor.visitGetExpr(this);
+  }
+}
+
 export class Grouping extends Expr {
   readonly expression: Expr;
 
@@ -107,6 +125,36 @@ export class Logical extends Expr {
 
   public accept<R>(visitor: Visitor<R>): R {
     return visitor.visitLogicalExpr(this);
+  }
+}
+
+export class Set extends Expr {
+  readonly obj: Expr;
+  readonly name: Token;
+  readonly value: Expr;
+
+  constructor(obj: Expr, name: Token, value: Expr) {
+    super();
+    this.obj = obj;
+    this.name = name;
+    this.value = value;
+  }
+
+  public accept<R>(visitor: Visitor<R>): R {
+    return visitor.visitSetExpr(this);
+  }
+}
+
+export class Ths extends Expr {
+  readonly keyword: Token;
+
+  constructor(keyword: Token) {
+    super();
+    this.keyword = keyword;
+  }
+
+  public accept<R>(visitor: Visitor<R>): R {
+    return visitor.visitThsExpr(this);
   }
 }
 
