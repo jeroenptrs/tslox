@@ -1,18 +1,5 @@
-# tslox
+<img src="http://craftinginterpreters.com/image/header.png" style="width: 500px; display: block; margin: auto;"/>
 
-Typescript implementation of jlox from [Crafting Interpreters](https://craftinginterpreters.com).
+# <p style="text-align: center;">tslox</p>
 
-## Usage
-
-Run loxfiles with the `tslox` binary. You can download the binary from the [releases pane](https://github.com/jeroenptrs/tslox/releases) or build it locally.
-
-## Building it locally
-
-Assuming you have node 10 or higher installed (the binary uses node 12) as well as yarn (`npm i -g yarn`):
-
-```bash
-git clone https://github.com/jeroenptrs/tslox.git
-cd tslox
-yarn
-yarn createExec
-```
+Typescript implementation of JLox, the language from Crafting Interpreters.
