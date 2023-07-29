@@ -18,7 +18,7 @@
     "name": "Jeroen Peeters",
     "email": "contact@jeroenpeeters.be"
   },
-  "license": "ISC",
+  "license": "MIT",
   "hooks": {
     "pre-commit": "pretty-quick --staged"
   },
