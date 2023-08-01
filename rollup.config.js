@@ -12,5 +12,9 @@ export default {
       format: "esm",
     },
   ],
-  plugins: [typescript({ tsconfig: "./tsconfig-prod.json" })],
+  plugins: [
+    typescript({
+      tsconfig: "./tsconfig-prod.json",
+    }),
+  ],
 };

@@ -1,7 +1,7 @@
 {
   "extends": "@jeroenpeeters/tsconfig",
   "compilerOptions": {
-    "baseUrl": "./src",
+    "baseUrl": "src",
     "outDir": "dist"
   }
 }
