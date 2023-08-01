@@ -1,3 +1,5 @@
+// This is a modification of lydell/js-tokens to fit the Lox Language.
+
 import { TokenEnum } from "./enums";
 import { identifierKeywords } from "./mapping";
 import type { ErrorFn, Token } from "./types";
@@ -10,8 +12,10 @@ const StringLiteral = /(")(?:(?!\1)[^\\\n\r]|\\(?:[^]))*(\1)?/y;
 const NumericLiteral =
   /(?:0[xX][\da-fA-F](?:_?[\da-fA-F])*|0[oO][0-7](?:_?[0-7])*|0[bB][01](?:_?[01])*)n?|0n|[1-9](?:_?\d)*n|(?:(?:0(?!\d)|0\d*[89]\d*|[1-9](?:_?\d)*)(?:\.(?:\d(?:_?\d)*)?)?|\.\d(?:_?\d)*)(?:[eE][+-]?\d(?:_?\d)*)?|0[0-7]+/y;
 const WhiteSpace = /[\t\v\f\ufeff\p{Zs}]+/uy;
-const NewLine = /\r?\n|[\r\u2028\u2029]/y;
+const LineTerminator = /\r?\n|[\r\u2028\u2029]/y;
+const MultiLineComment = /\/\*(?:[^*]|\*(?!\/))*(\*\/)?/y;
 const SingleLineComment = /\/\/.*/y;
+const NewLine = /\r?\n|[\r\u2028\u2029]/g;
 
 export default function* scanner(source: string, error: ErrorFn): Generator<Token, void, unknown> {
   const { length } = source;
@@ -93,14 +97,23 @@ export default function* scanner(source: string, error: ErrorFn): Generator<Toke
     }
 
     // 4.b. Newlines
-    NewLine.lastIndex = current;
-    if (NewLine.exec(source)) {
-      current = NewLine.lastIndex;
+    LineTerminator.lastIndex = current;
+    if (LineTerminator.exec(source)) {
+      current = LineTerminator.lastIndex;
       line++;
       continue;
     }
 
     // 4.c. Comments
+    // 4.c.a. Multi-line Comments
+    MultiLineComment.lastIndex = current;
+    if ((match = MultiLineComment.exec(source))) {
+      current = MultiLineComment.lastIndex;
+      line += (match[0].match(NewLine) ?? []).length;
+      continue;
+    }
+
+    // 4.c.b. Single-line Comments
     SingleLineComment.lastIndex = current;
     if (SingleLineComment.exec(source)) {
       current = SingleLineComment.lastIndex;
