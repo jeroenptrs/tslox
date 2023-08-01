@@ -2,6 +2,7 @@ import scanner from "./scanner";
 import { isToken } from "./Token";
 import { TokenEnum } from "./enums";
 import type { ErrorFn } from "./types";
+import { src } from "./test/src";
 
 let hadError = false;
 function report(line: number, where: string, message: string) {
@@ -20,8 +21,5 @@ const error: ErrorFn = (lineOrToken, message) => {
   }
 };
 
-scanner;
+console.log(Array.from(scanner(src, error)));
 hadError;
-error;
-
-import "./benchmarks";

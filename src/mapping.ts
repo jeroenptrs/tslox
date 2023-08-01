@@ -18,24 +18,3 @@ export const identifierKeywords: Record<string, TokenEnum> = {
   var: TokenEnum.VAR,
   while: TokenEnum.WHILE,
 };
-
-export const punctuationKeywords: Record<string, TokenEnum> = {
-  ["("]: TokenEnum.LEFT_PAREN,
-  [")"]: TokenEnum.RIGHT_PAREN,
-  ["{"]: TokenEnum.LEFT_BRACE,
-  ["}"]: TokenEnum.RIGHT_BRACE,
-  [","]: TokenEnum.COMMA,
-  ["."]: TokenEnum.DOT,
-  ["-"]: TokenEnum.MINUS,
-  ["+"]: TokenEnum.PLUS,
-  [";"]: TokenEnum.SEMICOLON,
-  ["*"]: TokenEnum.STAR,
-  ["!"]: TokenEnum.BANG,
-  ["!="]: TokenEnum.BANG_EQUAL,
-  ["="]: TokenEnum.EQUAL,
-  ["=="]: TokenEnum.EQUAL_EQUAL,
-  ["<"]: TokenEnum.LESS,
-  ["<="]: TokenEnum.LESS_EQUAL,
-  [">"]: TokenEnum.GREATER,
-  [">="]: TokenEnum.GREATER_EQUAL,
-};
