@@ -1,8 +1,8 @@
 // This is a modification of lydell/js-tokens to fit the Lox Language.
 
-import { TokenEnum } from "./enums";
 import { identifierKeywords } from "./mapping";
-import type { ErrorFn, Token } from "./types";
+import { TokenEnum } from "../enums";
+import type { ErrorFn, Token } from "../types";
 
 const Punctuation = /-{1}|\+{1}|\.|\*|(?:>|<|=|!)=?|\/(?![/*])|[,;(){}]/y;
 const Identifier =
@@ -17,8 +17,10 @@ const MultiLineComment = /\/\*(?:[^*]|\*(?!\/))*(\*\/)?/y;
 const SingleLineComment = /\/\/.*/y;
 const NewLine = /\r?\n|[\r\u2028\u2029]/g;
 
-export default function* scanner(source: string, error: ErrorFn): Generator<Token, void, unknown> {
+export default function* scanner(source: string, error: ErrorFn): Generator<Token, Token, unknown> {
   const { length } = source;
+  // TODO: dump tokens to recreate error trace.
+  // const tokens: Token[] = [];
   let start = 0;
   let current = 0;
   let currentToken = "";
@@ -126,5 +128,5 @@ export default function* scanner(source: string, error: ErrorFn): Generator<Toke
     error(line, `Unexpected token: ${currentToken}`);
   }
 
-  yield { type: TokenEnum.EOF, literal: undefined, lexeme: "", line };
+  return { type: TokenEnum.EOF, literal: undefined, lexeme: "", line };
 }

@@ -1,8 +1,5 @@
-export const src = `var point = makePoint(2, 3);
-print point("x"); // "2".
-/* abc */
-/*
-abc
-*/
-print point("y"); // "3".
-`;
+import { readFileSync } from "node:fs";
+import { cwd } from "node:process";
+import { resolve } from "node:path";
+
+export const src = readFileSync(resolve(cwd(), "test", "test9.lox"), { encoding: "utf-8" });

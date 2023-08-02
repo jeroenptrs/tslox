@@ -6,4 +6,8 @@ fun scope(a) {
 }
 
 var b = "global";
-scope(b);
+
+{
+  var c = "scoped";
+  scope(b);
+}

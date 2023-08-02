@@ -24,7 +24,8 @@
   },
   "scripts": {
     "build": "rollup --config rollup.config.js",
-    "start": "tsc",
+    "generate": "npx ts-node --esm src/generateAst.ts src",
+    "start": "yarn build && node dist/index.esm.js",
     "test": "jest",
     "prepare": "husky install"
   },
