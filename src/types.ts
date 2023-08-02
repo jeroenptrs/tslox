@@ -8,6 +8,6 @@ export interface Token {
   flag?: string;
 }
 
-export type Literal = undefined | string | number;
-export type ScannerFn = (source: string, index: number) => RegExpExecArray | null;
+export type Literal = undefined | string | number | null | boolean;
+export type IterableScanner = Generator<Token, Token, unknown>;
 export type ErrorFn = (lineOrToken: number | Token, message: string) => void;

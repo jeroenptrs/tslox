@@ -1,4 +1,4 @@
-import { TokenEnum } from "./enums";
+import { TokenEnum } from "../enums";
 
 export const identifierKeywords: Record<string, TokenEnum> = {
   and: TokenEnum.AND,
