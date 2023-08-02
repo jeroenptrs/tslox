@@ -2,6 +2,7 @@
   "extends": "@jeroenpeeters/tsconfig",
   "compilerOptions": {
     "baseUrl": "src",
-    "outDir": "dist"
+    "outDir": "dist",
+    "target": "ESNext"
   }
 }

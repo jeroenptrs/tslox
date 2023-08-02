@@ -47,3 +47,16 @@ export enum TokenEnum {
 
   EOF = "EOF",
 }
+
+export enum FunType {
+  NONE = 0,
+  FUN,
+  INITIALIZER,
+  METHOD,
+}
+
+export enum ClassType {
+  NONE = 0,
+  CLASS,
+  SUBCLASS,
+}
