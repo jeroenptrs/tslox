@@ -3,7 +3,7 @@ import * as Statement from "../Statement";
 import { ClassType, FunType } from "../enums";
 import Interpreter from "../interpreter";
 import { isIterable } from "../typeguards";
-import { ErrorFn, InterpretResolve, Token } from "../types";
+import type { ErrorFn, InterpretResolve, Token } from "../types";
 import * as errors from "./errors";
 
 export default class Resolver implements Expression.Visitor<void>, Statement.Visitor<void> {

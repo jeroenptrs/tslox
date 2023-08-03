@@ -19,10 +19,9 @@ const NewLine = /\r?\n|[\r\u2028\u2029]/g;
 
 export default function* scanner(source: string, error: ErrorFn): Generator<Token, Token, unknown> {
   const { length } = source;
-  // TODO: dump tokens to recreate error trace.
-  // const tokens: Token[] = [];
   let start = 0;
   let current = 0;
+  let lineStart = 0;
   let currentToken = "";
   let line = 1;
   let match: RegExpExecArray | null;
@@ -36,11 +35,14 @@ export default function* scanner(source: string, error: ErrorFn): Generator<Toke
       current = Punctuation.lastIndex;
 
       const punctuation = match[0];
+      const col = current - punctuation.length - lineStart;
+
       yield {
         type: punctuation as TokenEnum,
         literal: undefined,
         lexeme: punctuation,
         line,
+        col,
       };
       continue;
     }
@@ -51,11 +53,14 @@ export default function* scanner(source: string, error: ErrorFn): Generator<Toke
       current = Identifier.lastIndex;
 
       const text = match[0];
+      const col = current - text.length - lineStart;
+
       yield {
         type: identifierKeywords[text] ?? TokenEnum.IDENTIFIER,
         literal: undefined,
         lexeme: text,
         line,
+        col,
       };
       continue;
     }
@@ -65,12 +70,19 @@ export default function* scanner(source: string, error: ErrorFn): Generator<Toke
     StringLiteral.lastIndex = current;
     if ((match = StringLiteral.exec(source))) {
       current = StringLiteral.lastIndex;
-      const unterminatedString = current >= length;
-      if (unterminatedString) error(line, "Unterminated string.");
 
+      const unterminatedString = current >= length;
       const rawString = match[0];
       const value = rawString.substring(1, unterminatedString ? current : rawString.length - 1);
-      yield { type: TokenEnum.STRING, literal: value, lexeme: `"${value}"`, line };
+      const lexeme = `"${value}${unterminatedString ? "" : `"`}`;
+      const col = current - lexeme.length - lineStart;
+      const token = { type: TokenEnum.STRING, literal: value, lexeme, line, col };
+
+      if (unterminatedString) {
+        error(token, "Unterminated string.");
+      }
+
+      yield token;
       continue;
     }
 
@@ -81,11 +93,14 @@ export default function* scanner(source: string, error: ErrorFn): Generator<Toke
 
       const number = match[0];
       const isDecimal = number.includes(".");
+      const col = current - number.length - lineStart;
+
       yield {
         type: TokenEnum.NUMBER,
         literal: isDecimal ? parseFloat(number) : parseInt(number),
         lexeme: number,
         line,
+        col,
       };
       continue;
     }
@@ -101,7 +116,7 @@ export default function* scanner(source: string, error: ErrorFn): Generator<Toke
     // 4.b. Newlines
     LineTerminator.lastIndex = current;
     if (LineTerminator.exec(source)) {
-      current = LineTerminator.lastIndex;
+      current = lineStart = LineTerminator.lastIndex;
       line++;
       continue;
     }
@@ -128,5 +143,5 @@ export default function* scanner(source: string, error: ErrorFn): Generator<Toke
     error(line, `Unexpected token: ${currentToken}`);
   }
 
-  return { type: TokenEnum.EOF, literal: undefined, lexeme: "", line };
+  return { type: TokenEnum.EOF, literal: undefined, lexeme: "", line, col: current - lineStart };
 }

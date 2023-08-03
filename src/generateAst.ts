@@ -25,7 +25,7 @@ function generateAst(commands: string[]) {
       Unary: ["operator: Token", "right: Expression"],
       Variable: ["name: Token"],
     },
-    [`{ Token, Literal as TLiteral } from "./types"`]
+    [`type { Token, Literal as TLiteral } from "./types"`]
   );
 
   defineAst(
@@ -46,7 +46,7 @@ function generateAst(commands: string[]) {
       Variable: ["name: Token", "initializer: Expr.Expression | null"],
       LoxWhile: ["condition: Expr.Expression", "body: Statement"],
     },
-    [`* as Expr from "./Expression"`, `{ Token } from "./types"`]
+    [`* as Expr from "./Expression"`, `type { Token } from "./types"`]
   );
 }
 

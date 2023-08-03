@@ -1,6 +1,6 @@
 import type { Token } from "../types";
 
-export class RuntimeError extends Error {
+export default class RuntimeError extends Error {
   constructor(
     readonly token: Token,
     override readonly message: string

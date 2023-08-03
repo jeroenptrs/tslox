@@ -1,4 +1,4 @@
-import { RuntimeError } from "./RuntimeError";
+import RuntimeError from "./RuntimeError";
 import { Token } from "../types";
 
 export function isEqual(a: unknown, b: unknown): boolean {

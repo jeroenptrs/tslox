@@ -8,6 +8,7 @@ export interface Token {
   lexeme: string;
   literal: undefined | string | number;
   line: number;
+  col: number;
   flag?: string;
 }
 

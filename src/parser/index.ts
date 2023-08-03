@@ -52,7 +52,7 @@ export default function* parser(
       if (error instanceof ParseError && error.tokens) {
         throw error;
       } else if (error instanceof ParseError) {
-        throw new ParseError(error.message, error.line, error.lexeme, tokens);
+        throw new ParseError(error.message, error.line, error.lexeme, error.col, tokens);
       }
 
       synchronize();

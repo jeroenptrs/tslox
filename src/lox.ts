@@ -1,10 +1,11 @@
 import ParseError from "./ParseError";
 import { isToken } from "./typeguards";
 import { TokenEnum } from "./enums";
-import Interpreter from "./interpreter";
+import Interpreter, { RuntimeError } from "./interpreter";
 import parser from "./parser";
 import Resolver from "./resolver";
 import type { ErrorFn, RuntimeErrorFn } from "./types";
+import errorPrinter from "errorPrinter";
 
 let hadError = false;
 let hadRuntimeError = false;
@@ -27,27 +28,20 @@ export default function lox(source: string) {
     return true;
   } catch (error) {
     if (error instanceof ParseError) {
-      // console.log("--------------------");
-      console.log(error.message);
-      // console.log("--------------------");
-      // const { line, tokens } = error;
-      // console.log(
-      //   `${line}:`,
-      //   tokens
-      //     ?.filter((token) => token.line === line)
-      //     .map((token) => token.lexeme)
-      //     .join(" ")
-      // );
-      // console.log("--------------------");
+      errorPrinter(source, error);
+    }
+
+    if (error instanceof RuntimeError) {
+      errorPrinter(source, error);
     }
 
     return false;
   }
 }
 
-function report(line: number, where: string, message: string, lexeme?: string) {
+function report(line: number, where: string, message: string, lexeme?: string, col?: number) {
   hadError = true;
-  throw new ParseError(`[line: ${line}]: Error${where}: ${message}`, line, lexeme);
+  throw new ParseError(`Parse Error${where}: ${message}`, line, lexeme, col);
 }
 
 // TODO: error should use tokens to recreate a trace.
@@ -57,7 +51,8 @@ const error: ErrorFn = (lineOrToken, message) => {
       lineOrToken.line,
       lineOrToken.type === TokenEnum.EOF ? " at end" : ` at '${lineOrToken.lexeme}'`,
       message,
-      lineOrToken.lexeme
+      lineOrToken.lexeme,
+      lineOrToken.col
     );
   } else {
     report(lineOrToken, "", message);
@@ -65,8 +60,7 @@ const error: ErrorFn = (lineOrToken, message) => {
 };
 
 const runtimeError: RuntimeErrorFn = (error) => {
-  if (error.token) {
-    console.error(`${error.message}\n[line ${error!.token!.line}]`);
-    hadRuntimeError = true;
-  }
+  hadRuntimeError = true;
+
+  throw new RuntimeError(error.token, `Runtime Error: ${error.message}`);
 };

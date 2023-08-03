@@ -1,5 +1,5 @@
 import LoxClass from "./LoxClass";
-import { RuntimeError } from "./RuntimeError";
+import RuntimeError from "./RuntimeError";
 import type { Token, Value } from "../types";
 
 export default class LoxInstance {
