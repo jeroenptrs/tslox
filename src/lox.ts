@@ -27,18 +27,18 @@ export default function lox(source: string) {
     return true;
   } catch (error) {
     if (error instanceof ParseError) {
-      console.log("--------------------");
+      // console.log("--------------------");
       console.log(error.message);
-      console.log("--------------------");
-      const { line, tokens } = error;
-      console.log(
-        `${line}:`,
-        tokens
-          ?.filter((token) => token.line === line)
-          .map((token) => token.lexeme)
-          .join(" ")
-      );
-      console.log("--------------------");
+      // console.log("--------------------");
+      // const { line, tokens } = error;
+      // console.log(
+      //   `${line}:`,
+      //   tokens
+      //     ?.filter((token) => token.line === line)
+      //     .map((token) => token.lexeme)
+      //     .join(" ")
+      // );
+      // console.log("--------------------");
     }
 
     return false;
