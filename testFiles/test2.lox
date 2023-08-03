@@ -1,9 +1,0 @@
-return "toplevel";
-
-fun scope(a) {
-  var a = "local";
-  print a;
-}
-
-var b = "global";
-scope(b);

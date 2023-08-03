@@ -1,44 +1,65 @@
 {
-  "name": "tslox",
+  "name": "@jeroenpeeters/tslox",
   "version": "1.0.0",
-  "description": "typescript lox",
+  "private": false,
+  "type": "module",
+  "description": "Typescript implementation of JLox, the language from Crafting Interpreters",
+  "repository": "jeroenptrs/tslox",
   "main": "dist/index.js",
-  "module": "dist/tslox.esm.js",
-  "typings": "dist/index.d.ts",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "typescript"
+  ],
+  "author": {
+    "name": "Jeroen Peeters",
+    "email": "contact@jeroenpeeters.be"
+  },
+  "license": "MIT",
+  "hooks": {
+    "pre-commit": "pretty-quick --staged"
+  },
   "scripts": {
-    "ast": "node util/generateAst.js src",
-    "build": "tsdx build",
-    "clean": "shx rm -rf dist",
-    "file": "node util/runFile.js",
-    "createExec": "yarn build && pkg -t node12-macos-x64 util/runFile.js && shx mv runFile tslox",
-    "start": "tsdx watch",
-    "test": "tsdx test"
+    "build": "rollup --config rollup.config.js",
+    "generate": "npx ts-node --esm src/generateAst.ts src",
+    "start": "yarn build && node dist/index.esm.js",
+    "test": "jest",
+    "prepare": "husky install"
   },
-  "dependencies": {},
+  "dependencies": {
+    "effect": "^2.0.0-next.22",
+    "tslib": "^2.6.1",
+    "type-fest": "^4.0.0"
+  },
   "devDependencies": {
-    "@types/jest": "^24.0.15",
-    "@types/node": "^12.6.6",
-    "@types/object-hash": "^1.3.0",
-    "concurrently": "^4.1.1",
-    "husky": "^3.0.1",
-    "nodemon": "^1.19.1",
-    "object-hash": "^1.3.1",
-    "pkg": "^4.4.0",
-    "prettier": "^1.18.2",
-    "pretty-quick": "^1.11.1",
-    "shx": "^0.3.2",
-    "tsdx": "^0.7.2",
-    "tslib": "^1.10.0",
-    "typescript": "^3.5.3"
+    "@commitlint/cli": "^17.6.7",
+    "@commitlint/config-conventional": "^17.6.7",
+    "@jeroenpeeters/tsconfig": "^1.0.0",
+    "@rollup/plugin-typescript": "^11.1.2",
+    "@types/jest": "^29.5.3",
+    "@typescript-eslint/eslint-plugin": "^6.2.0",
+    "@typescript-eslint/parser": "^6.2.0",
+    "eslint": "^8.46.0",
+    "eslint-config-prettier": "^8.9.0",
+    "eslint-plugin-jest": "^27.2.3",
+    "eslint-plugin-prettier": "^5.0.0",
+    "husky": "^8.0.0",
+    "jest": "^29.6.2",
+    "js-tokens": "^8.0.1",
+    "prettier": "^3.0.0",
+    "pretty-quick": "^3.1.3",
+    "rollup": "^3.27.0",
+    "ts-jest": "^29.1.1",
+    "typescript": "^5.1.6"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "pretty-quick --staged"
-    }
-  },
-  "prettier": {
-    "printWidth": 100,
-    "trailingComma": "es5",
-    "quoteProps": "consistent"
+  "jest": {
+    "verbose": true,
+    "rootDir": "./src",
+    "preset": "ts-jest",
+    "collectCoverage": true,
+    "coverageDirectory": "../coverage"
   }
 }

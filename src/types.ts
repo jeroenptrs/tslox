@@ -1,62 +1,27 @@
-import { RuntimeError } from "./RuntimeError";
-import { Token } from "./Token";
+import { Expression } from "./Expression";
+import type { Statement } from "./Statement";
+import type { TokenEnum } from "./enums";
+import type { LoxCallable, LoxClass, LoxInstance, RuntimeError } from "./interpreter";
 
-export interface TokenType {
+export interface Token {
   type: TokenEnum;
   lexeme: string;
-  literal: any;
+  literal: undefined | string | number;
   line: number;
+  flag?: string;
 }
 
-export enum TokenEnum {
-  // Single-character tokens.
-  LEFT_PAREN = 0,
-  RIGHT_PAREN,
-  LEFT_BRACE,
-  RIGHT_BRACE,
-  COMMA,
-  DOT,
-  MINUS,
-  PLUS,
-  SEMICOLON,
-  SLASH,
-  STAR,
+export type Value = null | string | number | boolean | LoxCallable | LoxClass | LoxInstance;
 
-  // One or two character tokens.
-  BANG,
-  BANG_EQUAL,
-  EQUAL,
-  EQUAL_EQUAL,
-  GREATER,
-  GREATER_EQUAL,
-  LESS,
-  LESS_EQUAL,
+export type Literal = undefined | string | number | null | boolean;
+export type IterableScanner = Generator<Token, Token, unknown>;
+export type ErrorFn = (lineOrToken: number | Token, message: string) => void;
+export type RuntimeErrorFn = (error: RuntimeError) => void;
+export type OutFn = typeof console.log;
 
-  // Literals.
-  IDENTIFIER,
-  STRING,
-  NUMBER,
-
-  // Keywords.
-  AND,
-  CLASS,
-  ELSE,
-  FALSE,
-  FUN,
-  FOR,
-  IF,
-  NIL,
-  OR,
-  PRINT,
-  RETURN,
-  SUPER,
-  THIS,
-  TRUE,
-  VAR,
-  WHILE,
-
-  EOF,
-}
-
-export type LogRuntimeError = (e: RuntimeError) => void;
-export type LogError = (lineId: number | Token, message: string) => void;
+export type InterpretResolve =
+  | Generator<Statement, void, unknown>
+  | Statement[]
+  | Statement
+  | Expression;
+export type InterpretIterable = Generator<Statement, void, unknown> | Statement[];

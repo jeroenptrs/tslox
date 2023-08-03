@@ -1,0 +1,13 @@
+return "toplevel";
+
+fun scope(a) {
+  var a = "local";
+  print a;
+}
+
+var b = "global";
+
+{
+  var c = "scoped";
+  scope(b);
+}

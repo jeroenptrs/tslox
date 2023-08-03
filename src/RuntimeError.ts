@@ -1,4 +1,4 @@
-import { Token } from "./Token";
+import { Token } from "./types";
 
 export class RuntimeError extends Error {
   readonly token: Token;

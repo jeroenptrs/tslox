@@ -1,0 +1,16 @@
+{
+  "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended", "plugin:prettier/recommended"],
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint", "prettier"],
+  "overrides": [
+    {
+      "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended", "plugin:jest/recommended", "plugin:prettier/recommended"],
+      "plugins": ["@typescript-eslint", "jest", "prettier"],
+      "files": ["**/*.test.ts*"]
+    }
+  ],
+  "rules": {
+    "prettier/prettier": "error"
+  },
+  "root": true
+}
