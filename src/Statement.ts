@@ -1,6 +1,6 @@
 // GENERATED FILE! DO NOT EDIT!
 import * as Expr from "./Expression";
-import { Token } from "./types";
+import type { Token } from "./types";
 
 export abstract class Statement {
   abstract accept<R>(visitor: Visitor<R>): R;

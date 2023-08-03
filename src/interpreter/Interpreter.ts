@@ -8,7 +8,7 @@ import LoxClass from "./LoxClass";
 import LoxFun from "./LoxFun";
 import LoxInstance from "./LoxInstance";
 import Return from "./Return";
-import { RuntimeError } from "./RuntimeError";
+import RuntimeError from "./RuntimeError";
 import * as errors from "./errors";
 import { isEqual, isNumber, isTruthy } from "./helpers";
 import { Clock } from "./std/Clock";

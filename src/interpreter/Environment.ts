@@ -1,5 +1,5 @@
 import type { Token, Value } from "../types";
-import { RuntimeError } from "./RuntimeError";
+import RuntimeError from "./RuntimeError";
 import * as errors from "./errors";
 
 export default class Environment {

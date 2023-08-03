@@ -1,5 +1,5 @@
 // GENERATED FILE! DO NOT EDIT!
-import { Token, Literal as TLiteral } from "./types";
+import type { Token, Literal as TLiteral } from "./types";
 
 export abstract class Expression {
   abstract accept<R>(visitor: Visitor<R>): R;
