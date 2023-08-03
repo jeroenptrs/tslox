@@ -1,5 +1,9 @@
-export function stringify(object: any): string {
-  if (object === null) return "nil";
+import { Value } from "../types";
+
+export function stringify(object: Value): string {
+  if (object === null) {
+    return "nil";
+  }
 
   if (typeof object === "number") {
     let text = object.toString();

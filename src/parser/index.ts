@@ -2,13 +2,15 @@ import ParseError from "ParseError";
 import * as Expression from "../Expression";
 import * as Statement from "../Statement";
 import { TokenEnum } from "../enums";
-import type { ErrorFn, IterableScanner, Token } from "../types";
+import _scanner from "../scanner";
+import type { ErrorFn, Token } from "../types";
 import * as errors from "./errors";
 
 export default function* parser(
-  scanner: IterableScanner,
+  source: string,
   error: ErrorFn
 ): Generator<Statement.Statement, void, unknown> {
+  const scanner = _scanner(source, error);
   const tokens: Token[] = [];
   let current = 0;
   let forFlag: string | undefined;

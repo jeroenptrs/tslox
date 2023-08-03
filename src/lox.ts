@@ -1,18 +1,30 @@
 import ParseError from "./ParseError";
-import { isToken } from "./Token";
+import { isToken } from "./typeguards";
 import { TokenEnum } from "./enums";
+import Interpreter from "./interpreter";
 import parser from "./parser";
-import scanner from "./scanner";
-import { ErrorFn } from "./types";
+import Resolver from "./resolver";
+import type { ErrorFn, RuntimeErrorFn } from "./types";
 
 let hadError = false;
+let hadRuntimeError = false;
 
 export default function lox(source: string) {
   hadError = false;
+  hadRuntimeError = false;
 
   try {
-    const iterableParser = parser(scanner(source, error), error);
-    console.log(Array.from(iterableParser));
+    const interpreter = new Interpreter(console.log, runtimeError);
+    const iterableParser = parser(source, error);
+    const resolver = new Resolver(interpreter, error);
+    resolver.resolve(iterableParser);
+
+    if (hadError || hadRuntimeError) {
+      return false;
+    }
+
+    interpreter.interpret();
+    return true;
   } catch (error) {
     if (error instanceof ParseError) {
       console.log("--------------------");
@@ -28,10 +40,8 @@ export default function lox(source: string) {
       );
       console.log("--------------------");
     }
-  }
 
-  if (hadError) {
-    console.error("had error");
+    return false;
   }
 }
 
@@ -51,5 +61,12 @@ const error: ErrorFn = (lineOrToken, message) => {
     );
   } else {
     report(lineOrToken, "", message);
+  }
+};
+
+const runtimeError: RuntimeErrorFn = (error) => {
+  if (error.token) {
+    console.error(`${error.message}\n[line ${error!.token!.line}]`);
+    hadRuntimeError = true;
   }
 };
